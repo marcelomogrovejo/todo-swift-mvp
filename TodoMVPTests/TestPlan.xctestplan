@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "2B531086-FCA7-4379-B958-4FFD221F764D",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TodoMVP.xcodeproj",
+        "identifier" : "BD60CBD22ABD44D1002FEE46",
+        "name" : "TodoMVPTests"
+      }
+    }
+  ],
+  "version" : 1
+}

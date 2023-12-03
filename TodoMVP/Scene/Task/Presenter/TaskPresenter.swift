@@ -1,0 +1,30 @@
+//
+//  TaskPresenter.swift
+//  TodoMVP
+//
+//  Created by Marcelo Mogrovejo on 03/12/2023.
+//
+
+import Foundation
+import TodoRepositoryPackage
+
+class TaskPresenter: TaskPresenterProtocol {
+
+    // MARK: - Properties
+
+    weak var view: TaskViewProtocol?
+    var apiService: ApiServiceProtocol?
+
+    // MARK: - Business logic
+
+    func getTitle() {
+        let viewModel = TaskItem.Title.ViewModel(title: "New ToDo Task")
+        view?.displayTitle(viewModel: viewModel)
+    }
+
+    func fetchForm() {
+        view?.displyForm()
+    }
+
+
+}
