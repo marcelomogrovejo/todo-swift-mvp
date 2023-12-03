@@ -28,7 +28,6 @@
 		BD42B2E32B1B83B100961734 /* UITableView+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42B2E22B1B83B100961734 /* UITableView+Empty.swift */; };
 		BD60CBC12ABD44CF002FEE46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBC02ABD44CF002FEE46 /* AppDelegate.swift */; };
 		BD60CBC32ABD44CF002FEE46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBC22ABD44CF002FEE46 /* SceneDelegate.swift */; };
-		BD60CBC52ABD44CF002FEE46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBC42ABD44CF002FEE46 /* ViewController.swift */; };
 		BD60CBC82ABD44CF002FEE46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD60CBC62ABD44CF002FEE46 /* Main.storyboard */; };
 		BD60CBCA2ABD44D1002FEE46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD60CBC92ABD44D1002FEE46 /* Assets.xcassets */; };
 		BD60CBCD2ABD44D1002FEE46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD60CBCB2ABD44D1002FEE46 /* LaunchScreen.storyboard */; };
@@ -56,6 +55,7 @@
 		BDE488542ABEAD8D00DB9265 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE488532ABEAD8D00DB9265 /* MainRouter.swift */; };
 		BDF3CE502B136A5400F02819 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3CE4F2B136A5400F02819 /* ListRouter.swift */; };
 		BDF3CE532B137A5E00F02819 /* UIImge+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3CE522B137A5E00F02819 /* UIImge+Assets.swift */; };
+		BDFA0CCA2B1CE5AE00F9FE28 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BDFA0CC92B1CE5AD00F9FE28 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +98,6 @@
 		BD60CBBD2ABD44CF002FEE46 /* TodoMVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoMVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD60CBC02ABD44CF002FEE46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD60CBC22ABD44CF002FEE46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD60CBC42ABD44CF002FEE46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD60CBC72ABD44CF002FEE46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD60CBC92ABD44D1002FEE46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD60CBCC2ABD44D1002FEE46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		BDE488532ABEAD8D00DB9265 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		BDF3CE4F2B136A5400F02819 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
 		BDF3CE522B137A5E00F02819 /* UIImge+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImge+Assets.swift"; sourceTree = "<group>"; };
+		BDFA0CC92B1CE5AD00F9FE28 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,10 +334,10 @@
 				BDE488102ABD4BF200DB9265 /* Scene */,
 				BD60CBC02ABD44CF002FEE46 /* AppDelegate.swift */,
 				BD60CBC22ABD44CF002FEE46 /* SceneDelegate.swift */,
-				BD60CBC42ABD44CF002FEE46 /* ViewController.swift */,
 				BD60CBC62ABD44CF002FEE46 /* Main.storyboard */,
 				BD60CBCB2ABD44D1002FEE46 /* LaunchScreen.storyboard */,
 				BD60CBCE2ABD44D1002FEE46 /* Info.plist */,
+				BDFA0CC92B1CE5AD00F9FE28 /* README.md */,
 			);
 			path = TodoMVP;
 			sourceTree = "<group>";
@@ -711,6 +711,7 @@
 			files = (
 				BD60CBCD2ABD44D1002FEE46 /* LaunchScreen.storyboard in Resources */,
 				BD60CBCA2ABD44D1002FEE46 /* Assets.xcassets in Resources */,
+				BDFA0CCA2B1CE5AE00F9FE28 /* README.md in Resources */,
 				BD60CBC82ABD44CF002FEE46 /* Main.storyboard in Resources */,
 				BDE4883F2ABE9DBE00DB9265 /* ColorPalette.xcassets in Resources */,
 			);
@@ -741,7 +742,6 @@
 				BD1663C42B1C9B050090BCC6 /* TaskViewController+TableView.swift in Sources */,
 				BD42B2E32B1B83B100961734 /* UITableView+Empty.swift in Sources */,
 				BDE488382ABE9BD200DB9265 /* ListViewController.swift in Sources */,
-				BD60CBC52ABD44CF002FEE46 /* ViewController.swift in Sources */,
 				BDE488172ABD4C3100DB9265 /* MainFactory.swift in Sources */,
 				BDE488202ABD4FFB00DB9265 /* Main.swift in Sources */,
 				BDE4881A2ABD4C5D00DB9265 /* MainProtocol.swift in Sources */,
