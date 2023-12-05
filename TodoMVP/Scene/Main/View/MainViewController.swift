@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PSSplash
 
 class MainViewController: UIViewController {
 
@@ -13,10 +14,12 @@ class MainViewController: UIViewController {
 
     private struct Constants {
         static let welcomeHeight: CGFloat = 50.0
-        static let buttonInsets = UIEdgeInsets(top: 0.0, left: 30.0, bottom: 30.0, right: 30.0)
+        static let buttonInsets = UIEdgeInsets(top: 0.0, left: 30.0, bottom: -30.0, right: -30.0)
         static let buttonHeight: CGFloat = 40.0
         static let buttonCorner: CGFloat = 20.0
     }
+    private let animationName = "ani-todo-check"
+
     var presenter: MainPresenterProtocol?
     var router: MainRouterProtocol?
 
@@ -29,10 +32,15 @@ class MainViewController: UIViewController {
         navBar.translatesAutoresizingMaskIntoConstraints = false
         return navBar
     }()
-    var welcomeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    var welcomeView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    private var splashView: PSSplashView = {
+        let splashView = PSSplashView()
+        splashView.translatesAutoresizingMaskIntoConstraints = false
+        return splashView
     }()
     var listButton: UIButton = {
         let button = UIButton()
@@ -75,16 +83,37 @@ class MainViewController: UIViewController {
     }
 
     private func setupWelcome() {
-        presenter?.getWelcomeMessage()
+//        presenter?.getWelcomeMessage()
 
-        welcomeLabel.textColor = .Text.defaultColor
-        view.addSubview(welcomeLabel)
-        let welcomeLabelConstants = [
-            welcomeLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            welcomeLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            welcomeLabel.heightAnchor.constraint(equalToConstant: Constants.welcomeHeight)
+//        welcomeLabel.textColor = .Text.defaultColor
+        view.addSubview(welcomeView)
+        let welcomeViewConstants = [
+            welcomeView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            welcomeView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            welcomeView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            welcomeView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ]
-        NSLayoutConstraint.activate(welcomeLabelConstants)
+        NSLayoutConstraint.activate(welcomeViewConstants)
+
+        setupAnimation()
+    }
+
+    private func setupAnimation() {
+        splashView.animationName = animationName
+        splashView.loopMode = .loop
+        welcomeView.addSubview(splashView)
+        
+        /// SplashView constraints
+        splashView.translatesAutoresizingMaskIntoConstraints = false
+        let splashViewConstraints = [
+            splashView.centerXAnchor.constraint(equalTo: welcomeView.centerXAnchor),
+            splashView.centerYAnchor.constraint(equalTo: welcomeView.centerYAnchor),
+            /// The following constraints doesn't have any effect as PSSplashView has them hardcoded :-(
+            splashView.widthAnchor.constraint(equalTo: welcomeView.widthAnchor),
+            splashView.heightAnchor.constraint(equalTo: splashView.widthAnchor)
+
+        ]
+        NSLayoutConstraint.activate(splashViewConstraints)
     }
 
     private func setupButton() {
@@ -98,9 +127,9 @@ class MainViewController: UIViewController {
         view.addSubview(listButton)
         let listButtonConstraints = [
             listButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: Constants.buttonInsets.left),
-            listButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -Constants.buttonInsets.right),
+            listButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: Constants.buttonInsets.right),
             listButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
-            listButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.buttonInsets.bottom)
+            listButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: Constants.buttonInsets.bottom)
         ]
         NSLayoutConstraint.activate(listButtonConstraints)
     }

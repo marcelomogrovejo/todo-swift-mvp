@@ -23,16 +23,23 @@ class TaskViewController: UIViewController {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(TaskTextFieldTableViewCell.self, forCellReuseIdentifier: TableViewConstants.titleCellId)
-        tableView.register(TaskTextFieldTableViewCell.self, forCellReuseIdentifier: TableViewConstants.descriptionCellId)
-        tableView.register(TaskDateTimeTableViewCell.self, forCellReuseIdentifier: TableViewConstants.dateCellId)
-        tableView.register(TaskDateTimeTableViewCell.self, forCellReuseIdentifier: TableViewConstants.timeCellId)
+        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.titleCellId)
+        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.descriptionCellId)
+        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.dateCellId)
+        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.timeCellId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+
+    enum TableViewFieldType: Int {
+        case title = 0
+        case description = 1
+        case date = 2
+        case time = 3
+    }
 
     // MARK: - Lifecycle
 
@@ -48,10 +55,8 @@ class TaskViewController: UIViewController {
         view.backgroundColor = .Background.defaultBackgroundColor
 
         setupNavigationBar()
-
-        presenter?.getTitle()
-
         setupForm()
+        presenter?.getTitle()
     }
 
     private func setupNavigationBar() {
@@ -74,10 +79,10 @@ class TaskViewController: UIViewController {
         tableView.backgroundColor = .Background.defaultBackgroundColor
         view.addSubview(tableView)
         let tableViewConstants = [
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0.0),
-            tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 0.0),
-            tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: 0.0),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ]
         NSLayoutConstraint.activate(tableViewConstants)
 //        tableView.tableFooterView = UIView()

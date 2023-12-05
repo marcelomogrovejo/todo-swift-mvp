@@ -20,25 +20,25 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.titleCellId, 
-                                                     for: indexPath) as! TaskTextFieldTableViewCell
+        if indexPath.row == TableViewFieldType.title.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.titleCellId,
+                                                     for: indexPath) as! TaskTableViewCell
             cell.placeholder = "Title"
             return cell
-        } else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.descriptionCellId, 
-                                                     for: indexPath) as! TaskTextFieldTableViewCell
+        } else if indexPath.row == TableViewFieldType.description.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.descriptionCellId,
+                                                     for: indexPath) as! TaskTableViewCell
             cell.placeholder = "Description"
             return cell
-        } else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.dateCellId, 
-                                                     for: indexPath) as! TaskDateTimeTableViewCell
+        } else if indexPath.row == TableViewFieldType.date.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.dateCellId,
+                                                     for: indexPath) as! TaskTableViewCell
             cell.placeholder = "Date"
             cell.pickerType = .date
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.timeCellId, 
-                                                     for: indexPath) as! TaskDateTimeTableViewCell
+                                                     for: indexPath) as! TaskTableViewCell
             cell.placeholder = "Time"
             cell.pickerType = .time
             return cell
@@ -46,9 +46,6 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1 {
-            return 100.0
-        }
-        return 40.0
+        return 50.0
     }
 }

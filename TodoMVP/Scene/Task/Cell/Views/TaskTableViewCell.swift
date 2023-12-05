@@ -1,5 +1,5 @@
 //
-//  TaskDateTimeTableViewCell.swift
+//  TaskTableViewCell.swift
 //  TodoMVP
 //
 //  Created by Marcelo Mogrovejo on 03/12/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskDateTimeTableViewCell: UITableViewCell {
+class TaskTableViewCell: UITableViewCell {
 
     // MARK: - Private properties
 
@@ -15,7 +15,7 @@ class TaskDateTimeTableViewCell: UITableViewCell {
         static let textFieldInsets = UIEdgeInsets(top: 5.0, left: 15.0, bottom: -5.0, right: -15.0)
     }
 
-    private lazy var dateTextField: UITextField = {
+    private lazy var taskTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = .Text.defaultColor
@@ -36,7 +36,7 @@ class TaskDateTimeTableViewCell: UITableViewCell {
         case text
     }
 
-    var pickerType: DatePickerType = .date {
+    var pickerType: DatePickerType? {
         didSet {
             setupDatePicker()
         }
@@ -75,16 +75,14 @@ class TaskDateTimeTableViewCell: UITableViewCell {
     // MARK: - Private methods
 
     private func setupTextField() {
-        contentView.addSubview(dateTextField)
-        let dateTextFieldConstraints = [
-            dateTextField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.textFieldInsets.top),
-            dateTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.textFieldInsets.left),
-            dateTextField.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: Constants.textFieldInsets.right),
-            dateTextField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.textFieldInsets.bottom)
+        contentView.addSubview(taskTextField)
+        let taskTextFieldConstraints = [
+            taskTextField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.textFieldInsets.top),
+            taskTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.textFieldInsets.left),
+            taskTextField.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: Constants.textFieldInsets.right),
+            taskTextField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.textFieldInsets.bottom)
         ]
-        NSLayoutConstraint.activate(dateTextFieldConstraints)
-
-        dateTextField.inputView = datePicker
+        NSLayoutConstraint.activate(taskTextFieldConstraints)
     }
 
     private func setupDatePicker() {
@@ -98,11 +96,13 @@ class TaskDateTimeTableViewCell: UITableViewCell {
                                          action: #selector(donePressed)
         )
         toolBar.setItems([doneButton], animated: true)
-        dateTextField.inputAccessoryView = toolBar
+        taskTextField.inputAccessoryView = toolBar
+
+        taskTextField.inputView = datePicker
     }
 
     private func setupPlaceholder() {
-        dateTextField.attributedPlaceholder = NSAttributedString(
+        taskTextField.attributedPlaceholder = NSAttributedString(
             string: placeholder ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: 
                             UIColor.Text.placeholderColor ?? UIColor.clear
@@ -116,11 +116,11 @@ class TaskDateTimeTableViewCell: UITableViewCell {
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         if pickerType == .date {
-            dateTextField.text = formatter.string(from: datePicker.date)
+            taskTextField.text = formatter.string(from: datePicker.date)
         } else {
             let components = Calendar.current.dateComponents([.hour, .minute], 
                                                              from: datePicker.date)
-            dateTextField.text = "\(components.hour ?? 00):\(components.minute ?? 00)"
+            taskTextField.text = "\(components.hour ?? 00):\(components.minute ?? 00)"
         }
         self.endEditing(true)
     }

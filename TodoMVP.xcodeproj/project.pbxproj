@@ -20,15 +20,13 @@
 		BD1663B82B1C882D0090BCC6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1663B72B1C882D0090BCC6 /* TaskViewController.swift */; };
 		BD1663BB2B1C887B0090BCC6 /* TaskViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1663BA2B1C887B0090BCC6 /* TaskViewController+DisplayLogic.swift */; };
 		BD1663BE2B1C89F60090BCC6 /* TaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1663BD2B1C89F60090BCC6 /* TaskRouter.swift */; };
-		BD1663C12B1C963B0090BCC6 /* TaskTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1663C02B1C963B0090BCC6 /* TaskTextFieldTableViewCell.swift */; };
 		BD1663C42B1C9B050090BCC6 /* TaskViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1663C32B1C9B050090BCC6 /* TaskViewController+TableView.swift */; };
-		BD1663C82B1C9EC20090BCC6 /* TaskDateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1663C72B1C9EC20090BCC6 /* TaskDateTimeTableViewCell.swift */; };
+		BD1663C82B1C9EC20090BCC6 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1663C72B1C9EC20090BCC6 /* TaskTableViewCell.swift */; };
 		BD1BC08D2B1B917A004BD34A /* TodoRepositoryPackage in Frameworks */ = {isa = PBXBuildFile; productRef = BD1BC08C2B1B917A004BD34A /* TodoRepositoryPackage */; };
 		BD42B2C82B1A2E6800961734 /* ItemCheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42B2C72B1A2E6800961734 /* ItemCheckButton.swift */; };
 		BD42B2E32B1B83B100961734 /* UITableView+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42B2E22B1B83B100961734 /* UITableView+Empty.swift */; };
 		BD60CBC12ABD44CF002FEE46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBC02ABD44CF002FEE46 /* AppDelegate.swift */; };
 		BD60CBC32ABD44CF002FEE46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBC22ABD44CF002FEE46 /* SceneDelegate.swift */; };
-		BD60CBC82ABD44CF002FEE46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD60CBC62ABD44CF002FEE46 /* Main.storyboard */; };
 		BD60CBCA2ABD44D1002FEE46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD60CBC92ABD44D1002FEE46 /* Assets.xcassets */; };
 		BD60CBCD2ABD44D1002FEE46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD60CBCB2ABD44D1002FEE46 /* LaunchScreen.storyboard */; };
 		BD60CBE22ABD44D1002FEE46 /* TodoMVPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBE12ABD44D1002FEE46 /* TodoMVPUITests.swift */; };
@@ -56,6 +54,8 @@
 		BDF3CE502B136A5400F02819 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3CE4F2B136A5400F02819 /* ListRouter.swift */; };
 		BDF3CE532B137A5E00F02819 /* UIImge+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3CE522B137A5E00F02819 /* UIImge+Assets.swift */; };
 		BDFA0CCA2B1CE5AE00F9FE28 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BDFA0CC92B1CE5AD00F9FE28 /* README.md */; };
+		BDFA0CCD2B1F072600F9FE28 /* PetShopAnimationPackage in Frameworks */ = {isa = PBXBuildFile; productRef = BDFA0CCC2B1F072600F9FE28 /* PetShopAnimationPackage */; };
+		BDFA0CD22B1F134E00F9FE28 /* ani-todo-check.json in Resources */ = {isa = PBXBuildFile; fileRef = BDFA0CD12B1F134E00F9FE28 /* ani-todo-check.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,16 +89,14 @@
 		BD1663B72B1C882D0090BCC6 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		BD1663BA2B1C887B0090BCC6 /* TaskViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		BD1663BD2B1C89F60090BCC6 /* TaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRouter.swift; sourceTree = "<group>"; };
-		BD1663C02B1C963B0090BCC6 /* TaskTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		BD1663C32B1C9B050090BCC6 /* TaskViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskViewController+TableView.swift"; sourceTree = "<group>"; };
-		BD1663C72B1C9EC20090BCC6 /* TaskDateTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDateTimeTableViewCell.swift; sourceTree = "<group>"; };
+		BD1663C72B1C9EC20090BCC6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		BD42B2C72B1A2E6800961734 /* ItemCheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCheckButton.swift; sourceTree = "<group>"; };
 		BD42B2E22B1B83B100961734 /* UITableView+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Empty.swift"; sourceTree = "<group>"; };
 		BD42B2E52B1B8F9500961734 /* TodoRepositoryPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TodoRepositoryPackage; path = ../TodoRepositoryPackage; sourceTree = "<group>"; };
 		BD60CBBD2ABD44CF002FEE46 /* TodoMVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoMVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD60CBC02ABD44CF002FEE46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD60CBC22ABD44CF002FEE46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD60CBC72ABD44CF002FEE46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD60CBC92ABD44D1002FEE46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD60CBCC2ABD44D1002FEE46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD60CBCE2ABD44D1002FEE46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +128,7 @@
 		BDF3CE4F2B136A5400F02819 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
 		BDF3CE522B137A5E00F02819 /* UIImge+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImge+Assets.swift"; sourceTree = "<group>"; };
 		BDFA0CC92B1CE5AD00F9FE28 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BDFA0CD12B1F134E00F9FE28 /* ani-todo-check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ani-todo-check.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFA0CCD2B1F072600F9FE28 /* PetShopAnimationPackage in Frameworks */,
 				BD1BC08D2B1B917A004BD34A /* TodoRepositoryPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,8 +282,7 @@
 		BD1663C22B1C96420090BCC6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BD1663C02B1C963B0090BCC6 /* TaskTextFieldTableViewCell.swift */,
-				BD1663C72B1C9EC20090BCC6 /* TaskDateTimeTableViewCell.swift */,
+				BD1663C72B1C9EC20090BCC6 /* TaskTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,13 +327,13 @@
 		BD60CBBF2ABD44CF002FEE46 /* TodoMVP */ = {
 			isa = PBXGroup;
 			children = (
+				BDFA0CCE2B1F078E00F9FE28 /* Resources */,
 				BD1663982B1C76310090BCC6 /* Extension */,
 				BDF3CE512B1376BA00F02819 /* Assets */,
 				BDE4883D2ABE9DA400DB9265 /* ColorPalette */,
 				BDE488102ABD4BF200DB9265 /* Scene */,
 				BD60CBC02ABD44CF002FEE46 /* AppDelegate.swift */,
 				BD60CBC22ABD44CF002FEE46 /* SceneDelegate.swift */,
-				BD60CBC62ABD44CF002FEE46 /* Main.storyboard */,
 				BD60CBCB2ABD44D1002FEE46 /* LaunchScreen.storyboard */,
 				BD60CBCE2ABD44D1002FEE46 /* Info.plist */,
 				BDFA0CC92B1CE5AD00F9FE28 /* README.md */,
@@ -602,6 +601,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		BDFA0CCE2B1F078E00F9FE28 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BDFA0CD12B1F134E00F9FE28 /* ani-todo-check.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -620,6 +627,7 @@
 			name = TodoMVP;
 			packageProductDependencies = (
 				BD1BC08C2B1B917A004BD34A /* TodoRepositoryPackage */,
+				BDFA0CCC2B1F072600F9FE28 /* PetShopAnimationPackage */,
 			);
 			productName = TodoMVP;
 			productReference = BD60CBBD2ABD44CF002FEE46 /* TodoMVP.app */;
@@ -693,6 +701,9 @@
 				Base,
 			);
 			mainGroup = BD60CBB42ABD44CF002FEE46;
+			packageReferences = (
+				BDFA0CCB2B1F072600F9FE28 /* XCRemoteSwiftPackageReference "petshopanimationpackage" */,
+			);
 			productRefGroup = BD60CBBE2ABD44CF002FEE46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -712,8 +723,8 @@
 				BD60CBCD2ABD44D1002FEE46 /* LaunchScreen.storyboard in Resources */,
 				BD60CBCA2ABD44D1002FEE46 /* Assets.xcassets in Resources */,
 				BDFA0CCA2B1CE5AE00F9FE28 /* README.md in Resources */,
-				BD60CBC82ABD44CF002FEE46 /* Main.storyboard in Resources */,
 				BDE4883F2ABE9DBE00DB9265 /* ColorPalette.xcassets in Resources */,
+				BDFA0CD22B1F134E00F9FE28 /* ani-todo-check.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,8 +784,7 @@
 				BD1663A22B1C76D10090BCC6 /* ItemProtocol.swift in Sources */,
 				BD1663B82B1C882D0090BCC6 /* TaskViewController.swift in Sources */,
 				BDE488542ABEAD8D00DB9265 /* MainRouter.swift in Sources */,
-				BD1663C82B1C9EC20090BCC6 /* TaskDateTimeTableViewCell.swift in Sources */,
-				BD1663C12B1C963B0090BCC6 /* TaskTextFieldTableViewCell.swift in Sources */,
+				BD1663C82B1C9EC20090BCC6 /* TaskTableViewCell.swift in Sources */,
 				BD1663A52B1C77650090BCC6 /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,14 +824,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BD60CBC62ABD44CF002FEE46 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD60CBC72ABD44CF002FEE46 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BD60CBCB2ABD44D1002FEE46 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -959,7 +961,6 @@
 				INFOPLIST_FILE = TodoMVP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -987,7 +988,6 @@
 				INFOPLIST_FILE = TodoMVP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1120,10 +1120,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		BDFA0CCB2B1F072600F9FE28 /* XCRemoteSwiftPackageReference "petshopanimationpackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.com/marcelomogrovejo/petshopanimationpackage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		BD1BC08C2B1B917A004BD34A /* TodoRepositoryPackage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TodoRepositoryPackage;
+		};
+		BDFA0CCC2B1F072600F9FE28 /* PetShopAnimationPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDFA0CCB2B1F072600F9FE28 /* XCRemoteSwiftPackageReference "petshopanimationpackage" */;
+			productName = PetShopAnimationPackage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
