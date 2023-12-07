@@ -12,15 +12,15 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableView delegate & datasource
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        TaskSectionType.allCases.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == TableViewFieldType.title.rawValue {
+/*        if indexPath.row == TableViewFieldType.title.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.titleCellId,
                                                      for: indexPath) as! TaskTableViewCell
             cell.placeholder = "Title"
@@ -43,6 +43,16 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
             cell.pickerType = .time
             return cell
         }
+        */
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.titleCellId, for: indexPath) as! TaskTableViewCell
+        guard let section = TaskSectionType(rawValue: indexPath.section) else { return UITableViewCell() }
+        cell.placeholder = section.description
+        
+        cell.callback = { string in
+            self.dataStrings[indexPath.section] = string
+        }
+        
+        return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

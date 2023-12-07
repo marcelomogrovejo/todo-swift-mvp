@@ -41,11 +41,16 @@ class TaskViewController: UIViewController {
         case time = 3
     }
 
+    // MARK: DataSource ??
+    var dataStrings: [String] = []
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dataStrings = Array(repeating: "", count: TaskSectionType.allCases.count)
+        
         setupView()
     }
 
@@ -87,6 +92,7 @@ class TaskViewController: UIViewController {
         NSLayoutConstraint.activate(tableViewConstants)
 //        tableView.tableFooterView = UIView()
 
+        tableView.keyboardDismissMode = .onDrag
         presenter?.fetchForm()
     }
 
@@ -100,6 +106,13 @@ class TaskViewController: UIViewController {
     @objc
     private func addTask() {
         print("Saving...")
+        
+        for i in 0 ..< TaskSectionType.allCases.count {
+            guard let section = TaskSectionType(rawValue: i) else {
+                fatalError("Something wrong with TaskSectionType")
+            }
+            print(section.description, ":", dataStrings[i])
+        }
     }
 
 }

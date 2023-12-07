@@ -48,6 +48,8 @@ class TaskTableViewCell: UITableViewCell {
         }
     }
 
+    var callback: ((String) -> Void)?
+
     // MARK: - Lifecycle
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -75,6 +77,8 @@ class TaskTableViewCell: UITableViewCell {
     // MARK: - Private methods
 
     private func setupTextField() {
+        taskTextField.addTarget(self, action: #selector(TaskTableViewCell.textFieldChanged(_:)), for: .editingChanged)
+
         contentView.addSubview(taskTextField)
         let taskTextFieldConstraints = [
             taskTextField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.textFieldInsets.top),
@@ -110,6 +114,10 @@ class TaskTableViewCell: UITableViewCell {
         )
     }
 
+    @objc func textFieldChanged(_ textField: UITextField) -> Void {
+        callback?(textField.text ?? "")
+    }
+
     @objc
     private func donePressed() {
         let formatter = DateFormatter()
@@ -123,5 +131,22 @@ class TaskTableViewCell: UITableViewCell {
             taskTextField.text = "\(components.hour ?? 00):\(components.minute ?? 00)"
         }
         self.endEditing(true)
+    }
+}
+
+// TODO: move to an appropriated place !
+enum TaskSectionType: Int, CaseIterable, CustomStringConvertible {
+    case title
+    case description
+    case date
+    case time
+
+    var description: String {
+        switch self {
+        case .title: return "Title"
+        case .description: return "Short description"
+        case .date: return "Date"
+        case .time: return "Time"
+        }
     }
 }
