@@ -91,11 +91,19 @@ class TaskTableViewCell: UITableViewCell {
 
     private func setupDatePicker() {
         datePicker.minimumDate = Date()
-        datePicker.datePickerMode = pickerType == .date ? .date : .time
-        datePicker.preferredDatePickerStyle = pickerType == .date ? .inline : .wheels
+        switch pickerType {
+        case .date:
+            datePicker.datePickerMode = .date
+            datePicker.preferredDatePickerStyle = .inline
+        case .time:
+            datePicker.datePickerMode = .time
+            datePicker.preferredDatePickerStyle = .wheels
+        default:
+            break
+        }
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, 
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
                                          target: nil,
                                          action: #selector(donePressed)
         )
@@ -130,6 +138,7 @@ class TaskTableViewCell: UITableViewCell {
                                                              from: datePicker.date)
             taskTextField.text = "\(components.hour ?? 00):\(components.minute ?? 00)"
         }
+        callback?(taskTextField.text ?? "")
         self.endEditing(true)
     }
 }

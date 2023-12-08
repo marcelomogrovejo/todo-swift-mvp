@@ -17,41 +17,26 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
+//        TaskSectionType.allCases.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-/*        if indexPath.row == TableViewFieldType.title.rawValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.titleCellId,
-                                                     for: indexPath) as! TaskTableViewCell
-            cell.placeholder = "Title"
-            return cell
-        } else if indexPath.row == TableViewFieldType.description.rawValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.descriptionCellId,
-                                                     for: indexPath) as! TaskTableViewCell
-            cell.placeholder = "Description"
-            return cell
-        } else if indexPath.row == TableViewFieldType.date.rawValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.dateCellId,
-                                                     for: indexPath) as! TaskTableViewCell
-            cell.placeholder = "Date"
-            cell.pickerType = .date
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.timeCellId, 
-                                                     for: indexPath) as! TaskTableViewCell
-            cell.placeholder = "Time"
-            cell.pickerType = .time
-            return cell
-        }
-        */
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.titleCellId, for: indexPath) as! TaskTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.tableCellId, for: indexPath) as! TaskTableViewCell
         guard let section = TaskSectionType(rawValue: indexPath.section) else { return UITableViewCell() }
-        cell.placeholder = section.description
-        
-        cell.callback = { string in
-            self.dataStrings[indexPath.section] = string
+        // TODO: viewModel and setupCell()
+        print(section)
+        switch section {
+        case .date:
+            cell.pickerType = .date
+        case .time:
+            cell.pickerType = .time
+        default:
+            break
         }
-        
+        cell.placeholder = section.description
+        cell.callback = { string in
+            self.dataSource[indexPath.section] = string
+        }
         return cell
     }
 
