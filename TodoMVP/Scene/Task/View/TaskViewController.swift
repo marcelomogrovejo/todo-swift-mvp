@@ -13,20 +13,14 @@ class TaskViewController: UIViewController {
 
     struct TableViewConstants {
         static let numberOfSections: Int = 1
-        static let titleCellId: String = "TitleCellId"
-        static let descriptionCellId: String = "DescriptionCellId"
-        static let dateCellId: String = "DateCellId"
-        static let timeCellId: String = "TimeCellId"
+        static let tableCellId: String = "TableCellId"
     }
     var presenter: TaskPresenterProtocol?
     var router: TaskRouterProtocol?
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.titleCellId)
-        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.descriptionCellId)
-        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.dateCellId)
-        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.timeCellId)
+        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.tableCellId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -34,18 +28,17 @@ class TaskViewController: UIViewController {
         return tableView
     }()
 
-    enum TableViewFieldType: Int {
-        case title = 0
-        case description = 1
-        case date = 2
-        case time = 3
-    }
+    // MARK: DataSource ??
+    var dataSource: [String] = []
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // TODO: to presenter !
+        dataSource = Array(repeating: "", count: TaskSectionType.allCases.count)
+        
         setupView()
     }
 
@@ -76,7 +69,7 @@ class TaskViewController: UIViewController {
     }
 
     private func setupForm() {
-        tableView.backgroundColor = .Background.defaultBackgroundColor
+        tableView.backgroundColor = .lightGray //.Background.defaultBackgroundColor
         view.addSubview(tableView)
         let tableViewConstants = [
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -87,6 +80,7 @@ class TaskViewController: UIViewController {
         NSLayoutConstraint.activate(tableViewConstants)
 //        tableView.tableFooterView = UIView()
 
+        tableView.keyboardDismissMode = .onDrag
         presenter?.fetchForm()
     }
 
@@ -100,6 +94,13 @@ class TaskViewController: UIViewController {
     @objc
     private func addTask() {
         print("Saving...")
+        print(dataSource)
+//        for i in 0 ..< TaskSectionType.allCases.count {
+//            guard let section = TaskSectionType(rawValue: i) else {
+//                fatalError("Something wrong with TaskSectionType")
+//            }
+//            print(section.description, ":", dataStrings[i])
+//        }
     }
 
 }

@@ -12,37 +12,32 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableView delegate & datasource
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        TaskSectionType.allCases.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        1
+//        TaskSectionType.allCases.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == TableViewFieldType.title.rawValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.titleCellId,
-                                                     for: indexPath) as! TaskTableViewCell
-            cell.placeholder = "Title"
-            return cell
-        } else if indexPath.row == TableViewFieldType.description.rawValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.descriptionCellId,
-                                                     for: indexPath) as! TaskTableViewCell
-            cell.placeholder = "Description"
-            return cell
-        } else if indexPath.row == TableViewFieldType.date.rawValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.dateCellId,
-                                                     for: indexPath) as! TaskTableViewCell
-            cell.placeholder = "Date"
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.tableCellId, for: indexPath) as! TaskTableViewCell
+        guard let section = TaskSectionType(rawValue: indexPath.section) else { return UITableViewCell() }
+        // TODO: viewModel and setupCell()
+        print(section)
+        switch section {
+        case .date:
             cell.pickerType = .date
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.timeCellId, 
-                                                     for: indexPath) as! TaskTableViewCell
-            cell.placeholder = "Time"
+        case .time:
             cell.pickerType = .time
-            return cell
+        default:
+            break
         }
+        cell.placeholder = section.description
+        cell.callback = { string in
+            self.dataSource[indexPath.section] = string
+        }
+        return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -48,6 +48,8 @@ class TaskTableViewCell: UITableViewCell {
         }
     }
 
+    var callback: ((String) -> Void)?
+
     // MARK: - Lifecycle
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -75,6 +77,8 @@ class TaskTableViewCell: UITableViewCell {
     // MARK: - Private methods
 
     private func setupTextField() {
+        taskTextField.addTarget(self, action: #selector(TaskTableViewCell.textFieldChanged(_:)), for: .editingChanged)
+
         contentView.addSubview(taskTextField)
         let taskTextFieldConstraints = [
             taskTextField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.textFieldInsets.top),
@@ -87,11 +91,19 @@ class TaskTableViewCell: UITableViewCell {
 
     private func setupDatePicker() {
         datePicker.minimumDate = Date()
-        datePicker.datePickerMode = pickerType == .date ? .date : .time
-        datePicker.preferredDatePickerStyle = pickerType == .date ? .inline : .wheels
+        switch pickerType {
+        case .date:
+            datePicker.datePickerMode = .date
+            datePicker.preferredDatePickerStyle = .inline
+        case .time:
+            datePicker.datePickerMode = .time
+            datePicker.preferredDatePickerStyle = .wheels
+        default:
+            break
+        }
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, 
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
                                          target: nil,
                                          action: #selector(donePressed)
         )
@@ -110,6 +122,10 @@ class TaskTableViewCell: UITableViewCell {
         )
     }
 
+    @objc func textFieldChanged(_ textField: UITextField) -> Void {
+        callback?(textField.text ?? "")
+    }
+
     @objc
     private func donePressed() {
         let formatter = DateFormatter()
@@ -122,6 +138,24 @@ class TaskTableViewCell: UITableViewCell {
                                                              from: datePicker.date)
             taskTextField.text = "\(components.hour ?? 00):\(components.minute ?? 00)"
         }
+        callback?(taskTextField.text ?? "")
         self.endEditing(true)
+    }
+}
+
+// TODO: move to an appropriated place !
+enum TaskSectionType: Int, CaseIterable, CustomStringConvertible {
+    case title
+    case description
+    case date
+    case time
+
+    var description: String {
+        switch self {
+        case .title: return "Title"
+        case .description: return "Short description"
+        case .date: return "Date"
+        case .time: return "Time"
+        }
     }
 }
