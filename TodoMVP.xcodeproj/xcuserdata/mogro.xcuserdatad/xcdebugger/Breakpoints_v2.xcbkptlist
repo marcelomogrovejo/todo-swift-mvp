@@ -23,54 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "68BB902D-B579-4736-9F78-93D31053ED57"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TodoMVP/Scene/Task/Presenter/TaskPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "addTask(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "68BB902D-B579-4736-9F78-93D31053ED57 - 2df37b604e716b4f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TodoMVP.TaskPresenter.addTask(request: TodoMVP.TaskItem.Save.Request) -&gt; ()"
-                  moduleName = "TodoMVP"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mogro/DevStuff/kk/TodoMVP/TodoMVP/Scene/Task/Presenter/TaskPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "1704">
-               </Location>
-               <Location
-                  uuid = "68BB902D-B579-4736-9F78-93D31053ED57 - 2df37b604e716b4f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TodoMVP.TaskPresenter.addTask(request: TodoMVP.TaskItem.Save.Request) -&gt; ()"
-                  moduleName = "TodoMVP"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mogro/DevStuff/kk/TodoMVP/TodoMVP/Scene/Task/Presenter/TaskPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "1702">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CF264E55-9502-4A96-80CE-A1A47E1307BE"
             shouldBeEnabled = "No"
             ignoreCount = "0"

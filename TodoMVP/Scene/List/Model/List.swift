@@ -41,11 +41,14 @@ struct List {
             let task: Task
         }
         struct Response {}
-        struct ViewModel {}
+        struct ViewModel {
+            let task: Task
+        }
     }
 }
 
 struct Task {
+    let id: String
     let avatar: String?
     let username: String
     let title: String

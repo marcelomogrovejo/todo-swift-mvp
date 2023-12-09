@@ -51,18 +51,12 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         UITableView.automaticDimension
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        0.0
-    }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        nil
-    }
-
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
-            
-            print("Deleting task...")
-            completion(true)
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completion) in
+            guard let self = self else { return }
+            let request = List.Remove.Request(task: tasks[indexPath.row])
+            print("Delete: \(request)")
+            self.presenter?.getRemoveConfirmation(request: request)
         }
 //        deleteAction.image = UIImage(named: "icn-delete-task.png")
         deleteAction.backgroundColor = .red

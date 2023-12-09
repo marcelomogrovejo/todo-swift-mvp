@@ -28,11 +28,7 @@ class TaskPresenter: TaskPresenterProtocol {
     }
 
     func addTask(request: TaskItem.Save.Request) {
-        print("Data String: \(request.dataSource[2]) \(request.dataSource[3])")
         let dateToPersist = "\(request.dataSource[2]), \(request.dataSource[3])".fullFormattedDate
-        print("Save date: \(dateToPersist)")
-
-        
         let todoTask = DomainTodoTask(id: UUID().uuidString,
                                       avatar: "",
                                       username: "mogro",
