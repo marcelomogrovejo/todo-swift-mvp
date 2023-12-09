@@ -15,5 +15,12 @@ struct TaskItem {
             let title: String
         }
     }
+    enum Save {
+        struct Request {
+            let dataSource: [String]
+        }
+        struct Response {}
+        struct ViewModel {}
+    }
 
 }

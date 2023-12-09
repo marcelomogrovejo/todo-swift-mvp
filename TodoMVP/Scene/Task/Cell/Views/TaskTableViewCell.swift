@@ -71,12 +71,13 @@ class TaskTableViewCell: UITableViewCell {
 }
 
 extension TaskTableViewCell {
-    
+
     // MARK: - Private methods
-    
+
     private func setupTextField() {
         taskTextField.addTarget(self, action: #selector(TaskTableViewCell.textFieldChanged(_:)), for: .editingChanged)
-        
+        taskTextField.autocorrectionType = .no
+
         contentView.addSubview(taskTextField)
         let taskTextFieldConstraints = [
             taskTextField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.textFieldInsets.top),
@@ -86,7 +87,7 @@ extension TaskTableViewCell {
         ]
         NSLayoutConstraint.activate(taskTextFieldConstraints)
     }
-    
+
     private func setupDatePicker() {
         datePicker.minimumDate = Date()
         switch pickerType {

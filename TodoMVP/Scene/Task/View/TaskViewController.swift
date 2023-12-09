@@ -14,6 +14,9 @@ class TaskViewController: UIViewController {
     struct TableViewConstants {
         static let numberOfSections: Int = 1
         static let tableCellId: String = "TableCellId"
+
+        static let headerCellHeight: CGFloat = 20.0
+        static let cellHeight: CGFloat = 50.0
     }
     var presenter: TaskPresenterProtocol?
     var router: TaskRouterProtocol?
@@ -40,8 +43,6 @@ class TaskViewController: UIViewController {
     // MARK: - Private
 
     private func setupView() {
-//        view.backgroundColor = .Background.defaultBackgroundColor
-
         setupNavigationBar()
         setupForm()
         presenter?.getTitle()
@@ -64,18 +65,7 @@ class TaskViewController: UIViewController {
     }
 
     private func setupForm() {
-        
-        
-        
-        
-        
-        
-        tableView.backgroundColor = .Background.defaultBackgroundColor //.secondarySystemGroupedBackground
-        
-        
-        
-        
-        
+        tableView.backgroundColor = .Background.defaultBackgroundColor
         view.addSubview(tableView)
         let tableViewConstants = [
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -99,14 +89,8 @@ class TaskViewController: UIViewController {
 
     @objc
     private func addTask() {
-        print("Saving...")
-        print(dataSource)
-//        for i in 0 ..< TaskSectionType.allCases.count {
-//            guard let section = TaskSectionType(rawValue: i) else {
-//                fatalError("Something wrong with TaskSectionType")
-//            }
-//            print(section.description, ":", dataStrings[i])
-//        }
+        let request = TaskItem.Save.Request(dataSource: dataSource)
+        presenter?.addTask(request: request)
     }
 
 }

@@ -19,4 +19,13 @@ extension TaskViewController: TaskViewProtocol {
         dataSource = viewModel.dataSource
         tableView.reloadData()
     }
+
+    func displayAddedSuccessfully(viewModel: TaskItem.Save.ViewModel) {
+        presentAlertWithTitle("Task added", 
+                              message: "Your task has been saved successfully",
+                              options: "Close") { [weak self] _ in
+            guard let self = self else { return }
+            self.router?.dismissSelf(taskViewController: self)
+        }
+    }
 }

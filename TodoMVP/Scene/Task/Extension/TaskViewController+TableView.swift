@@ -10,16 +10,16 @@ import UIKit
 extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - TableView delegate & datasource
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         TaskCellType.allCases.count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
-//        TaskSectionType.allCases.count
+        //        TaskSectionType.allCases.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.tableCellId, for: indexPath) as! TaskTableViewCell
         guard let section = TaskCellType(rawValue: indexPath.section) else { return UITableViewCell() }
@@ -39,8 +39,23 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
+        TableViewConstants.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        TableViewConstants.headerCellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        .leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        UIView()
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        UIView()
     }
 }

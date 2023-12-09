@@ -11,6 +11,7 @@ import TodoRepositoryPackage
 protocol TaskViewProtocol: AnyObject {
     func displayTitle(viewModel: TaskItem.Title.ViewModel)
     func displyForm(viewModel: Form.Init.ViewModel)
+    func displayAddedSuccessfully(viewModel: TaskItem.Save.ViewModel)
 }
 
 protocol TaskPresenterProtocol: AnyObject {
@@ -19,6 +20,7 @@ protocol TaskPresenterProtocol: AnyObject {
 
     func getTitle()
     func initForm()
+    func addTask(request: TaskItem.Save.Request)
 }
 
 protocol TaskRouterProtocol: AnyObject {

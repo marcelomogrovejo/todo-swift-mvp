@@ -47,9 +47,7 @@ class ListViewController: UIViewController {
         view.backgroundColor = .Background.defaultBackgroundColor
 
         setupNavigationBar()
-
         presenter?.getTitle()
-
         setupList()
     }
 
@@ -59,21 +57,22 @@ class ListViewController: UIViewController {
                                         target: self,
                                         action: #selector(ListViewController.newTask))
         addButton.tintColor = .Button.foregroundColor
-        let closeButton = UIBarButtonItem(barButtonSystemItem: .stop, 
+        navigationItem.rightBarButtonItem = addButton
+        let closeButton = UIBarButtonItem(barButtonSystemItem: .stop,
                                           target: self,
                                           action: #selector(ListViewController.dismissSelf))
         closeButton.tintColor = .Button.foregroundColor
-        navigationItem.rightBarButtonItems = [closeButton, addButton]
+        navigationItem.leftBarButtonItem = closeButton
     }
 
     private func setupList() {
         tableView.backgroundColor = .Background.defaultBackgroundColor
         view.addSubview(tableView)
         let tableViewConstants = [
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0.0),
-            tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 0.0),
-            tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: 0.0),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ]
         NSLayoutConstraint.activate(tableViewConstants)
 
