@@ -26,14 +26,13 @@ class ListPresenter: ListPresenterProtocol {
     func fetchTaskList() {
         apiService?.getAll() { [weak self] result in
             guard let self = self else { return }
-
             switch result {
             case .success(let domainTodoTasks):
                 let tasks = domainTodoTasks.map{
                     Task(avatar: $0.avatar,
                          username: $0.username,
                          title: $0.title,
-                         date: $0.date,
+                         date: $0.date.stringyfiedDate,
                          description: $0.description,
                          isComplete: $0.isCompleted)
                 }

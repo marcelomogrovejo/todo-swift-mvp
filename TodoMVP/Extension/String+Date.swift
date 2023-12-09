@@ -13,15 +13,32 @@ extension String {
         getFormattedDate()
     }
 
+    var formattedTime: Date {
+        getFormattedTime()
+    }
+
     var isoFormattedDate: Date {
         getISOFormattedDate()
     }
 
     private func getFormattedDate() -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+//        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = Locale(identifier: Locale.preferredLanguages[0])
 //        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+//        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatter.dateStyle = .short
+        let formattedDate = dateFormatter.date(from: self) ?? Date.now
+        return formattedDate
+    }
+
+    private func getFormattedTime() -> Date {
+        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = Locale(identifier: Locale.preferredLanguages[0])
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+//        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatter.timeStyle = .short
         let formattedDate = dateFormatter.date(from: self) ?? Date.now
         return formattedDate
     }

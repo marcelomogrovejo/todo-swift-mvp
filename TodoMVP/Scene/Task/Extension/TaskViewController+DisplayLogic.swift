@@ -25,6 +25,7 @@ extension TaskViewController: TaskViewProtocol {
                               message: "Your task has been saved successfully",
                               options: "Close") { [weak self] _ in
             guard let self = self else { return }
+            self.delegate?.updateView()
             self.router?.dismissSelf(taskViewController: self)
         }
     }

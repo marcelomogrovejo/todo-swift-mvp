@@ -23,54 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6E354821-32B0-4B59-A6DA-98A66FDC7631"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TodoMVP/Scene/Task/Presenter/TaskPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "addTask(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6E354821-32B0-4B59-A6DA-98A66FDC7631 - 1b1530c44ba4f4a0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;TodoRepositoryPackage.DomainTodoTask, TodoRepositoryPackage.RepositoryError&gt;) -&gt; () in TodoMVP.TaskPresenter.addTask(request: TodoMVP.TaskItem.Save.Request) -&gt; ()"
-                  moduleName = "TodoMVP"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mogro/DevStuff/kk/TodoMVP/TodoMVP/Scene/Task/Presenter/TaskPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "806">
-               </Location>
-               <Location
-                  uuid = "6E354821-32B0-4B59-A6DA-98A66FDC7631 - 1b1530c44ba4f483"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;TodoRepositoryPackage.DomainTodoTask, TodoRepositoryPackage.RepositoryError&gt;) -&gt; () in TodoMVP.TaskPresenter.addTask(request: TodoMVP.TaskItem.Save.Request) -&gt; ()"
-                  moduleName = "TodoMVP"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mogro/DevStuff/kk/TodoMVP/TodoMVP/Scene/Task/Presenter/TaskPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "540">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "191BAB19-C4D1-4499-B528-78192E7E1AB5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -81,6 +33,54 @@
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "new(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "191BAB19-C4D1-4499-B528-78192E7E1AB5 - 8b6a6b83fe1d749a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;TodoRepositoryPackage.TodoTaskDto, TodoRepositoryPackage.RepositoryError&gt;) -&gt; () in TodoRepositoryPackage.ApiService.new(_: TodoRepositoryPackage.DomainTodoTask, completion: (Swift.Result&lt;TodoRepositoryPackage.DomainTodoTask, TodoRepositoryPackage.RepositoryError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TodoMVP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mogro/DevStuff/kk/TodoRepositoryPackage/Sources/TodoRepositoryPackage/DomainLayer/ApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1156">
+               </Location>
+               <Location
+                  uuid = "191BAB19-C4D1-4499-B528-78192E7E1AB5 - 8b6a6b83fe1d749a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;TodoRepositoryPackage.TodoTaskDto, TodoRepositoryPackage.RepositoryError&gt;) -&gt; () in TodoRepositoryPackage.ApiService.new(_: TodoRepositoryPackage.DomainTodoTask, completion: (Swift.Result&lt;TodoRepositoryPackage.DomainTodoTask, TodoRepositoryPackage.RepositoryError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TodoMVP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mogro/DevStuff/kk/TodoRepositoryPackage/Sources/TodoRepositoryPackage/DomainLayer/ApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "958">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29329B1E-DD3F-4B4F-9583-9E406CB5FADC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TodoMVP/Scene/List/Cell/Presenter/ItemPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "verifyDate(request:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

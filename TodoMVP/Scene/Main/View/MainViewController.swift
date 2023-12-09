@@ -100,7 +100,7 @@ class MainViewController: UIViewController {
 
     private func setupAnimation() {
         splashView.animationName = animationName
-        splashView.loopMode = .loop
+        splashView.loopMode = .playOnce
         welcomeView.addSubview(splashView)
         
         /// SplashView constraints

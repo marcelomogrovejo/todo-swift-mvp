@@ -17,6 +17,10 @@ extension Date {
         getStringyfiedDate()
     }
 
+    var stringyfiedTime: String {
+        getStringyfiedTime()
+    }
+
     private func getFinalDate() -> Date {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day, .hour], from: self)
@@ -31,8 +35,18 @@ extension Date {
         let dateFormatter = DateFormatter()
 
         dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .medium
-        dateFormatter.locale = Locale(identifier: "en-EN")
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: Locale.preferredLanguages[0])
+
+        return dateFormatter.string(from: self)
+    }
+
+    private func getStringyfiedTime() -> String {
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+        dateFormatter.locale = Locale(identifier: Locale.preferredLanguages[0])
 
         return dateFormatter.string(from: self)
     }

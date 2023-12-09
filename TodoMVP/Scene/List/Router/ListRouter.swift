@@ -10,9 +10,10 @@ import UIKit
 class ListRouter: ListRouterProtocol {
 
     func navigateToTask(view: UIViewController) {
-        let destinationVC = TaskFactory().createScene()
-//        destinationVC.title = "ToDo List"
+        let destinationVC = TaskFactory().createScene() as! TaskViewController
+        destinationVC.title = "ToDo List"
         destinationVC.isModalInPresentation = true
+        destinationVC.delegate = view as! ListViewController
         let navVC = UINavigationController(rootViewController: destinationVC)
         view.present(navVC, animated: true)
     }

@@ -15,4 +15,11 @@ struct Form {
             let dataSource: [String]
         }
     }
+    struct TodoItem {
+        let title: String
+        let description: String
+        let date: Date
+        let time: Date
+        let dateTime: Date
+    }
 }

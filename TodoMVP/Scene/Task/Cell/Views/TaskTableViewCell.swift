@@ -8,13 +8,13 @@
 import UIKit
 
 class TaskTableViewCell: UITableViewCell {
-    
+
     // MARK: - Private properties
-    
+
     private struct Constants {
         static let textFieldInsets = UIEdgeInsets(top: 5.0, left: 15.0, bottom: -5.0, right: -15.0)
     }
-    
+
     private lazy var taskTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -27,41 +27,41 @@ class TaskTableViewCell: UITableViewCell {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         return datePicker
     }()
-    
+
     // MARK: - Public properties
-    
+
     var pickerType: DatePickerType? {
         didSet {
             setupDatePicker()
         }
     }
-    
+
     var placeholder: String? {
         didSet {
             setupPlaceholder()
         }
     }
-    
+
     var callback: ((String) -> Void)?
-    
+
     // MARK: - Lifecycle
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .TextField.containerBackgrounColor
-        
+
         setupTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -108,7 +108,7 @@ extension TaskTableViewCell {
         )
         toolBar.setItems([doneButton], animated: true)
         taskTextField.inputAccessoryView = toolBar
-        
+
         taskTextField.inputView = datePicker
     }
 
@@ -133,16 +133,7 @@ extension TaskTableViewCell {
 
     @objc
     private func donePressed() {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .none
-        if pickerType == .date {
-            taskTextField.text = formatter.string(from: datePicker.date)
-        } else {
-            let components = Calendar.current.dateComponents([.hour, .minute], 
-                                                             from: datePicker.date)
-            taskTextField.text = "\(components.hour ?? 00):\(components.minute ?? 00)"
-        }
+        taskTextField.text = pickerType == .date ? datePicker.date.stringyfiedDate : datePicker.date.stringyfiedTime
         callback?(taskTextField.text ?? "")
         self.endEditing(true)
     }

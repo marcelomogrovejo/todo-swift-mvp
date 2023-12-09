@@ -41,6 +41,7 @@ class ListViewController: UIViewController {
         setupView()
     }
 
+
     // MARK: - Private
 
     private func setupView() {
@@ -60,7 +61,7 @@ class ListViewController: UIViewController {
         navigationItem.rightBarButtonItem = addButton
         let closeButton = UIBarButtonItem(barButtonSystemItem: .stop,
                                           target: self,
-                                          action: #selector(ListViewController.dismissSelf))
+                                          action: #selector(ListViewController.close))
         closeButton.tintColor = .Button.foregroundColor
         navigationItem.leftBarButtonItem = closeButton
     }
@@ -87,7 +88,16 @@ class ListViewController: UIViewController {
     }
 
     @objc
-    private func dismissSelf() {
+    private func close() {
         router?.dismissSelf(listViewController: self)
+    }
+}
+
+extension ListViewController: TaskViewDismissable {
+
+    // MARK: - TaskView dismissable
+
+    func updateView() {
+        presenter?.fetchTaskList()
     }
 }

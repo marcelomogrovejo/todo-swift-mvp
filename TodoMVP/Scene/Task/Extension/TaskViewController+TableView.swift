@@ -23,8 +23,6 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.tableCellId, for: indexPath) as! TaskTableViewCell
         guard let section = TaskCellType(rawValue: indexPath.section) else { return UITableViewCell() }
-        // TODO: viewModel and setupCell()
-        print(section)
         switch section {
         case .date:
             cell.pickerType = .date

@@ -28,12 +28,17 @@ class TaskPresenter: TaskPresenterProtocol {
     }
 
     func addTask(request: TaskItem.Save.Request) {
-        print("Saving...")
+        print(request.dataSource[2].formattedDate)
+        print(request.dataSource[3].formattedTime)
+        let standarDateTime = "\(request.dataSource[2].formattedDate) \(request.dataSource[3].formattedTime)"
+        print(standarDateTime)
+        print("Save date: \(standarDateTime)")
         let todoTask = DomainTodoTask(id: UUID().uuidString,
                                       avatar: "",
                                       username: "mogro",
                                       title: request.dataSource[0],
-                                      date: "\(request.dataSource[2]) \(request.dataSource[3])",
+//                                      date: "\(request.dataSource[2]) \(request.dataSource[3])",
+                                      date: standarDateTime,
                                       description: request.dataSource[1],
                                       isCompleted: false)
         apiService?.new(todoTask) { [weak self] result in

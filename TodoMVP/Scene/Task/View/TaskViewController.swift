@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TaskViewDismissable: AnyObject {
+    func updateView()
+}
+
 class TaskViewController: UIViewController {
 
     // MARK: - Properties
@@ -33,6 +37,10 @@ class TaskViewController: UIViewController {
 
     var dataSource: [String] = []
 
+    // MARK: - Delegate
+
+    weak var delegate: TaskViewDismissable?
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -53,7 +61,7 @@ class TaskViewController: UIViewController {
         let cancelButton = UIBarButtonItem(title: "Cancel", 
                                            style: .plain,
                                            target: self,
-                                           action: #selector(TaskViewController.dismissSelf))
+                                           action: #selector(TaskViewController.cancel))
         navigationItem.leftBarButtonItem = cancelButton
         cancelButton.tintColor = .Button.foregroundColor
         let addButton = UIBarButtonItem(title: "Add", 
@@ -83,7 +91,7 @@ class TaskViewController: UIViewController {
     // MARK: - Target
 
     @objc
-    private func dismissSelf() {
+    private func cancel() {
         router?.dismissSelf(taskViewController: self)
     }
 
