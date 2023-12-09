@@ -32,7 +32,7 @@ class ListPresenter: ListPresenterProtocol {
                     Task(avatar: $0.avatar,
                          username: $0.username,
                          title: $0.title,
-                         date: $0.date.stringyfiedDate,
+                         date: $0.date.stringyfiedFullDate,
                          description: $0.description,
                          isComplete: $0.isCompleted)
                 }

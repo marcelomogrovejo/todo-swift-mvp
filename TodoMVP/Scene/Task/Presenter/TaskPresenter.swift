@@ -28,17 +28,16 @@ class TaskPresenter: TaskPresenterProtocol {
     }
 
     func addTask(request: TaskItem.Save.Request) {
-        print(request.dataSource[2].formattedDate)
-        print(request.dataSource[3].formattedTime)
-        let standarDateTime = "\(request.dataSource[2].formattedDate) \(request.dataSource[3].formattedTime)"
-        print(standarDateTime)
-        print("Save date: \(standarDateTime)")
+        print("Data String: \(request.dataSource[2]) \(request.dataSource[3])")
+        let dateToPersist = "\(request.dataSource[2]), \(request.dataSource[3])".fullFormattedDate
+        print("Save date: \(dateToPersist)")
+
+        
         let todoTask = DomainTodoTask(id: UUID().uuidString,
                                       avatar: "",
                                       username: "mogro",
                                       title: request.dataSource[0],
-//                                      date: "\(request.dataSource[2]) \(request.dataSource[3])",
-                                      date: standarDateTime,
+                                      date: dateToPersist,
                                       description: request.dataSource[1],
                                       isCompleted: false)
         apiService?.new(todoTask) { [weak self] result in
@@ -52,6 +51,7 @@ class TaskPresenter: TaskPresenterProtocol {
                 print("Adding Error: \(error.localizedDescription)")
             }
         }
+         
     }
 
 }

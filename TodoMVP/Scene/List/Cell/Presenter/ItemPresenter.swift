@@ -13,7 +13,7 @@ class ItemPresenter: ItemPresenterProtocol {
 
     func verifyDate(request: Item.Date.Request) {
         var isExpired = false
-        if request.dateStr.formattedDate < Date() {
+        if request.dateStr.fullFormattedDate < Date() {
             isExpired = true
         }
         let viewModel = Item.Date.ViewModel(dateStr: request.dateStr, isExpired: isExpired)

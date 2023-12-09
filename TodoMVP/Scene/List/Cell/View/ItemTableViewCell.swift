@@ -98,7 +98,7 @@ class ItemTableViewCell: UITableViewCell {
             taskTitleLabel.text = title
         }
     }
-    var date: String = Date().stringyfiedDate {
+    var date: String = Date().stringyfiedFullDate {
         didSet {
             setupDate()
         }
