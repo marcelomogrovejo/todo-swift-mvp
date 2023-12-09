@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
     private var navBar: UINavigationBar = {
         let navBar = UINavigationBar()
         navBar.prefersLargeTitles = false
-        navBar.barTintColor = .Background.navbarBackgroundColor
+        navBar.barTintColor = .NavBar.backgroundColor
         navBar.translatesAutoresizingMaskIntoConstraints = false
         return navBar
     }()

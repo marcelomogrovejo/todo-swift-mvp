@@ -3,6 +3,16 @@
     {
       "filename" : "radio-button.png",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "radio-button-light.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

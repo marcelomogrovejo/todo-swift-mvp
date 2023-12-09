@@ -10,7 +10,7 @@ import Foundation
 extension ItemTableViewCell: ItemViewProtocol {
 
     func displayVerifiedDate(viewModel: Item.Date.ViewModel) {
-        taskDateLabel.textColor = viewModel.isExpired ? .red : .black
+        taskDateLabel.textColor = viewModel.isExpired ? .red : .Text.defaultColor
         taskDateLabel.text = viewModel.dateStr
     }
 

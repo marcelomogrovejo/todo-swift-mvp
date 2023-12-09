@@ -8,18 +8,18 @@
 import UIKit
 
 class TaskTableViewCell: UITableViewCell {
-
+    
     // MARK: - Private properties
-
+    
     private struct Constants {
         static let textFieldInsets = UIEdgeInsets(top: 5.0, left: 15.0, bottom: -5.0, right: -15.0)
     }
-
+    
     private lazy var taskTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.textColor = .Text.defaultColor
-        textField.backgroundColor = .Background.defaultBackgroundColor
+        textField.textColor = .TextField.textColor
+        textField.backgroundColor = .TextField.backgroundColor
         return textField
     }()
     private lazy var datePicker: UIDatePicker = {
@@ -27,58 +27,56 @@ class TaskTableViewCell: UITableViewCell {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         return datePicker
     }()
-
+    
     // MARK: - Public properties
-
-    enum DatePickerType {
-        case date
-        case time
-        case text
-    }
-
+    
     var pickerType: DatePickerType? {
         didSet {
             setupDatePicker()
         }
     }
-
+    
     var placeholder: String? {
         didSet {
             setupPlaceholder()
         }
     }
-
+    
     var callback: ((String) -> Void)?
-
+    
     // MARK: - Lifecycle
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .Background.defaultBackgroundColor
-
+        backgroundColor = .TextField.containerBackgrounColor
+        
         setupTextField()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
+    
+}
 
+extension TaskTableViewCell {
+    
     // MARK: - Private methods
-
+    
     private func setupTextField() {
         taskTextField.addTarget(self, action: #selector(TaskTableViewCell.textFieldChanged(_:)), for: .editingChanged)
-
+        
         contentView.addSubview(taskTextField)
         let taskTextFieldConstraints = [
             taskTextField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.textFieldInsets.top),
@@ -88,7 +86,7 @@ class TaskTableViewCell: UITableViewCell {
         ]
         NSLayoutConstraint.activate(taskTextFieldConstraints)
     }
-
+    
     private func setupDatePicker() {
         datePicker.minimumDate = Date()
         switch pickerType {
@@ -109,20 +107,26 @@ class TaskTableViewCell: UITableViewCell {
         )
         toolBar.setItems([doneButton], animated: true)
         taskTextField.inputAccessoryView = toolBar
-
+        
         taskTextField.inputView = datePicker
     }
 
     private func setupPlaceholder() {
         taskTextField.attributedPlaceholder = NSAttributedString(
             string: placeholder ?? "",
-            attributes: [NSAttributedString.Key.foregroundColor: 
-                            UIColor.Text.placeholderColor ?? UIColor.clear
+            attributes: [NSAttributedString.Key.foregroundColor:
+                            UIColor.TextField.placeholderColor ?? UIColor.clear
                         ]
         )
     }
+}
 
-    @objc func textFieldChanged(_ textField: UITextField) -> Void {
+extension TaskTableViewCell {
+
+    // MARK: - Targets
+
+    @objc
+    private func textFieldChanged(_ textField: UITextField) -> Void {
         callback?(textField.text ?? "")
     }
 
@@ -140,22 +144,5 @@ class TaskTableViewCell: UITableViewCell {
         }
         callback?(taskTextField.text ?? "")
         self.endEditing(true)
-    }
-}
-
-// TODO: move to an appropriated place !
-enum TaskSectionType: Int, CaseIterable, CustomStringConvertible {
-    case title
-    case description
-    case date
-    case time
-
-    var description: String {
-        switch self {
-        case .title: return "Title"
-        case .description: return "Short description"
-        case .date: return "Date"
-        case .time: return "Time"
-        }
     }
 }

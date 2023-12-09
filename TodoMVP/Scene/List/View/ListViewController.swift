@@ -54,8 +54,8 @@ class ListViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationController?.navigationBar.backgroundColor = .Background.navbarBackgroundColor
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, 
+        navigationController?.navigationBar.backgroundColor = .NavBar.backgroundColor
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add,
                                         target: self,
                                         action: #selector(ListViewController.newTask))
         addButton.tintColor = .Button.foregroundColor

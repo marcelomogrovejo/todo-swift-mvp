@@ -12,7 +12,7 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableView delegate & datasource
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        TaskSectionType.allCases.count
+        TaskCellType.allCases.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -22,7 +22,7 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.tableCellId, for: indexPath) as! TaskTableViewCell
-        guard let section = TaskSectionType(rawValue: indexPath.section) else { return UITableViewCell() }
+        guard let section = TaskCellType(rawValue: indexPath.section) else { return UITableViewCell() }
         // TODO: viewModel and setupCell()
         print(section)
         switch section {

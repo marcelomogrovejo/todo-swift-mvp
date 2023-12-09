@@ -28,24 +28,19 @@ class TaskViewController: UIViewController {
         return tableView
     }()
 
-    // MARK: DataSource ??
     var dataSource: [String] = []
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // TODO: to presenter !
-        dataSource = Array(repeating: "", count: TaskSectionType.allCases.count)
-        
         setupView()
     }
 
     // MARK: - Private
 
     private func setupView() {
-        view.backgroundColor = .Background.defaultBackgroundColor
+//        view.backgroundColor = .Background.defaultBackgroundColor
 
         setupNavigationBar()
         setupForm()
@@ -53,7 +48,7 @@ class TaskViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationController?.navigationBar.backgroundColor = .Background.navbarBackgroundColor
+        navigationController?.navigationBar.backgroundColor = .NavBar.backgroundColor
         let cancelButton = UIBarButtonItem(title: "Cancel", 
                                            style: .plain,
                                            target: self,
@@ -69,7 +64,18 @@ class TaskViewController: UIViewController {
     }
 
     private func setupForm() {
-        tableView.backgroundColor = .lightGray //.Background.defaultBackgroundColor
+        
+        
+        
+        
+        
+        
+        tableView.backgroundColor = .Background.defaultBackgroundColor //.secondarySystemGroupedBackground
+        
+        
+        
+        
+        
         view.addSubview(tableView)
         let tableViewConstants = [
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -81,7 +87,7 @@ class TaskViewController: UIViewController {
 //        tableView.tableFooterView = UIView()
 
         tableView.keyboardDismissMode = .onDrag
-        presenter?.fetchForm()
+        presenter?.initForm()
     }
 
     // MARK: - Target

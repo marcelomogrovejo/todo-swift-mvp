@@ -19,13 +19,18 @@ extension UIColor {
 
     struct Background {
         static let defaultBackgroundColor = UIColor(named: "bkg-default-color")
-        static let navbarBackgroundColor = UIColor(named: "bkg-default-navbar-color")
     }
 
     struct Text {
         static let highlitedColor = UIColor(named: "txt-highlited-color")
         static let defaultColor = UIColor(named: "txt-default-color")
-        static let placeholderColor = UIColor(named: "txt-placeholder-color")
+    }
+
+    struct TextField {
+        static let textColor = UIColor(named: "txt-field-text-color")
+        static let placeholderColor = UIColor(named: "txt-field-placeholder-color")
+        static let backgroundColor = UIColor(named: "txt-field-background-color")
+        static let containerBackgrounColor = UIColor(named: "txt-container-background-color")
     }
 
     struct Progress {
@@ -45,4 +50,9 @@ extension UIColor {
         static let backgroundColor = UIColor(named: "btn-bkg-color")
         static let foregroundColor = UIColor(named: "btn-fgd-color")
     }
+
+    struct NavBar {
+        static let backgroundColor = UIColor(named: "bkg-nav-bar-default-color")
+    }
+
 }

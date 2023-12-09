@@ -10,7 +10,7 @@ import TodoRepositoryPackage
 
 protocol TaskViewProtocol: AnyObject {
     func displayTitle(viewModel: TaskItem.Title.ViewModel)
-    func displyForm()
+    func displyForm(viewModel: Form.Init.ViewModel)
 }
 
 protocol TaskPresenterProtocol: AnyObject {
@@ -18,7 +18,7 @@ protocol TaskPresenterProtocol: AnyObject {
     var apiService: ApiServiceProtocol? { get set }
 
     func getTitle()
-    func fetchForm()
+    func initForm()
 }
 
 protocol TaskRouterProtocol: AnyObject {

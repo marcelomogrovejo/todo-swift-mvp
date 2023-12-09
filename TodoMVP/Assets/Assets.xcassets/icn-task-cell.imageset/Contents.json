@@ -3,6 +3,16 @@
     {
       "filename" : "clipboard.png",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "clipboard-light.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

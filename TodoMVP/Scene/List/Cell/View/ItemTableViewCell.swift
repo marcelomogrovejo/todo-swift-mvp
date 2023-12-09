@@ -49,6 +49,7 @@ class ItemTableViewCell: UITableViewCell {
     private lazy var avatarImageView: UIImageView = {
         let avatarImageView = UIImageView()
         avatarImageView.image = .ListItem.defaultTask
+        avatarImageView.image?.withTintColor(.systemBackground)
 //        avatarImageView.layer.cornerRadius = Constants.defaultAvatarWidth / 2
         avatarImageView.clipsToBounds = true
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false

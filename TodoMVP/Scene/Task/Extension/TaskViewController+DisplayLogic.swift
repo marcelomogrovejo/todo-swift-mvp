@@ -15,7 +15,8 @@ extension TaskViewController: TaskViewProtocol {
         title = viewModel.title
     }
 
-    func displyForm() {
+    func displyForm(viewModel: Form.Init.ViewModel) {
+        dataSource = viewModel.dataSource
         tableView.reloadData()
     }
 }

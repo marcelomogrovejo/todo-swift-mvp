@@ -22,8 +22,9 @@ class TaskPresenter: TaskPresenterProtocol {
         view?.displayTitle(viewModel: viewModel)
     }
 
-    func fetchForm() {
-        view?.displyForm()
+    func initForm() {
+        let viewModel = Form.Init.ViewModel(dataSource: Array(repeating: "", count: TaskCellType.allCases.count))
+        view?.displyForm(viewModel: viewModel)
     }
 
 

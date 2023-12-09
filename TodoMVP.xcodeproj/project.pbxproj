@@ -31,6 +31,9 @@
 		BD60CBCD2ABD44D1002FEE46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD60CBCB2ABD44D1002FEE46 /* LaunchScreen.storyboard */; };
 		BD60CBE22ABD44D1002FEE46 /* TodoMVPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBE12ABD44D1002FEE46 /* TodoMVPUITests.swift */; };
 		BD60CBE42ABD44D1002FEE46 /* TodoMVPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBE32ABD44D1002FEE46 /* TodoMVPUITestsLaunchTests.swift */; };
+		BDA93D582B240A19002DE3DC /* TaskCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA93D572B240A19002DE3DC /* TaskCellType.swift */; };
+		BDA93D5A2B240A64002DE3DC /* DatePickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA93D592B240A64002DE3DC /* DatePickerType.swift */; };
+		BDA93D5C2B240B9E002DE3DC /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA93D5B2B240B9E002DE3DC /* Form.swift */; };
 		BDE488172ABD4C3100DB9265 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE488162ABD4C3100DB9265 /* MainFactory.swift */; };
 		BDE4881A2ABD4C5D00DB9265 /* MainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE488192ABD4C5D00DB9265 /* MainProtocol.swift */; };
 		BDE4881C2ABD4C8000DB9265 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4881B2ABD4C8000DB9265 /* MainViewController.swift */; };
@@ -104,6 +107,9 @@
 		BD60CBDD2ABD44D1002FEE46 /* TodoMVPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoMVPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD60CBE12ABD44D1002FEE46 /* TodoMVPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMVPUITests.swift; sourceTree = "<group>"; };
 		BD60CBE32ABD44D1002FEE46 /* TodoMVPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMVPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BDA93D572B240A19002DE3DC /* TaskCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellType.swift; sourceTree = "<group>"; };
+		BDA93D592B240A64002DE3DC /* DatePickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerType.swift; sourceTree = "<group>"; };
+		BDA93D5B2B240B9E002DE3DC /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		BDE488162ABD4C3100DB9265 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		BDE488192ABD4C5D00DB9265 /* MainProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocol.swift; sourceTree = "<group>"; };
 		BDE4881B2ABD4C8000DB9265 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				BD1663B32B1C88050090BCC6 /* Task.swift */,
+				BDA93D5B2B240B9E002DE3DC /* Form.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 		BD1663BF2B1C95F80090BCC6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				BDA93D562B2409E9002DE3DC /* Enums */,
 				BD1663C22B1C96420090BCC6 /* Views */,
 			);
 			path = Cell;
@@ -357,6 +365,15 @@
 				BD60CBE32ABD44D1002FEE46 /* TodoMVPUITestsLaunchTests.swift */,
 			);
 			path = TodoMVPUITests;
+			sourceTree = "<group>";
+		};
+		BDA93D562B2409E9002DE3DC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BDA93D572B240A19002DE3DC /* TaskCellType.swift */,
+				BDA93D592B240A64002DE3DC /* DatePickerType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		BDE488102ABD4BF200DB9265 /* Scene */ = {
@@ -759,12 +776,14 @@
 				BDE4883C2ABE9D2700DB9265 /* List.swift in Sources */,
 				BDE488232ABD506600DB9265 /* MainView+DisplayLogic.swift in Sources */,
 				BD1663B62B1C88180090BCC6 /* TaskPresenter.swift in Sources */,
+				BDA93D582B240A19002DE3DC /* TaskCellType.swift in Sources */,
 				BDE488482ABE9E6400DB9265 /* ListViewController+TableView.swift in Sources */,
 				BD16639A2B1C764B0090BCC6 /* String+Date.swift in Sources */,
 				BD1663B22B1C87FC0090BCC6 /* TaskFactory.swift in Sources */,
 				BDF3CE502B136A5400F02819 /* ListRouter.swift in Sources */,
 				BDE4883A2ABE9CE300DB9265 /* ListProtocol.swift in Sources */,
 				BD1663BE2B1C89F60090BCC6 /* TaskRouter.swift in Sources */,
+				BDA93D5C2B240B9E002DE3DC /* Form.swift in Sources */,
 				BDE488412ABE9DDE00DB9265 /* UIColor+ColorPalette.swift in Sources */,
 				BD1663A82B1C790A0090BCC6 /* ItemTableViewCell+DisplayLogic.swift in Sources */,
 				BDE4884E2ABE9FEE00DB9265 /* ListPresenter.swift in Sources */,
@@ -777,6 +796,7 @@
 				BDE4881E2ABD4DD100DB9265 /* MainPresenter.swift in Sources */,
 				BDF3CE532B137A5E00F02819 /* UIImge+Assets.swift in Sources */,
 				BD1663B42B1C88050090BCC6 /* Task.swift in Sources */,
+				BDA93D5A2B240A64002DE3DC /* DatePickerType.swift in Sources */,
 				BDE488452ABE9E2C00DB9265 /* ItemTableViewCell.swift in Sources */,
 				BD1663B02B1C87E80090BCC6 /* TaskProtocol.swift in Sources */,
 				BD60CBC32ABD44CF002FEE46 /* SceneDelegate.swift in Sources */,
