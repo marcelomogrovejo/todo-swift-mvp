@@ -20,4 +20,8 @@ class MockMainPresenter: MainPresenterProtocol {
         numberOfTimesIsCalledGetWellcomeMessage += 1
     }
 
+    func getListTitleButton() {
+        // TODO
+    }
+
 }
