@@ -12,31 +12,29 @@ import XCTest
 
 final class MainPresenterTests: XCTestCase {
 
+    var sut: MainPresenterProtocol!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = MainPresenter()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
-    func testMainPresenter_GetWelcomeMessage_ShowSuccessfully() {
+    func testMainPresenter_GetListTitleButton_Successfully() {
         // Arrange
-//        let sut = MainPresenter()
-//        sut.view =
-        
+        let mockMainView = MockMainView()
+        sut.view = mockMainView
+
         // Act
-//        sut.getWelcomeMessage()
+        sut.getListTitleButton()
 
         // Assert
-//        XCTAssertTrue(<#T##expression: Bool##Bool#>)
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        XCTAssertTrue(mockMainView.isDisplayButtonTitleCalled,
+                      "displayButtonTitle() should be called")
+        XCTAssertEqual(mockMainView.numberOfTimesIsCalledGetDisplayButtonTitle, 1,
+                       "displayButtonTitle() should be called once")
     }
 
 }

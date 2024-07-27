@@ -81,12 +81,12 @@ class ListViewController: UIViewController {
     // MARK: - Target
 
     @objc
-    private func newTask() {
+    func newTask() {
         router?.navigateToTask(view: self)
     }
 
     @objc
-    private func close() {
+    func close() {
         router?.dismissSelf(listViewController: self)
     }
 }

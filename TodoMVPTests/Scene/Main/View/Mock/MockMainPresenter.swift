@@ -10,18 +10,15 @@ import Foundation
 
 class MockMainPresenter: MainPresenterProtocol {
 
-    var view: TodoMVP.MainViewProtocol?
+    // Just to conform the protocol
+    var view: MainViewProtocol?
 
-    private(set) var isGetWellcomeMessageCalled = false
-    private(set) var numberOfTimesIsCalledGetWellcomeMessage = 0
-
-    func getWelcomeMessage() {
-        isGetWellcomeMessageCalled = true
-        numberOfTimesIsCalledGetWellcomeMessage += 1
-    }
+    private(set) var isGetListTitleButtonCalled = false
+    private(set) var numberOfTimesIsCalledGetListTitleButton = 0
 
     func getListTitleButton() {
-        // TODO
+        isGetListTitleButtonCalled = true
+        numberOfTimesIsCalledGetListTitleButton += 1
     }
 
 }

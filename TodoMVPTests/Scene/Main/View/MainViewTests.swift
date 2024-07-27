@@ -13,12 +13,12 @@ class MainViewControllerTests: XCTestCase {
     var window: UIWindow!
     var sut: MainViewController!
 
-    override func setUp() {
+    override func setUpWithError() throws {
         window = UIWindow()
         sut = MainViewController()
     }
 
-    override func tearDown() {
+    override func tearDownWithError() throws {
         window = nil
         sut = nil
     }
@@ -33,9 +33,10 @@ class MainViewControllerTests: XCTestCase {
         RunLoop.current.run(until: Date())
 
         // Assert
-        XCTAssertTrue(mockPresenter.isGetWellcomeMessageCalled,
+        XCTAssertTrue(mockPresenter.isGetListTitleButtonCalled,
                       "getWellcomeMessage() should be called")
-        XCTAssertEqual(mockPresenter.numberOfTimesIsCalledGetWellcomeMessage, 1,
+        XCTAssertEqual(mockPresenter.numberOfTimesIsCalledGetListTitleButton, 1,
                        "getWellcomeMessage() should be called once")
     }
+
 }

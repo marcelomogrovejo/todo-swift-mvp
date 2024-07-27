@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "4C91A8BE-9C72-4B55-ADAC-CE067B3DCE44",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "IDEPreferLogStreaming",
+        "value" : "YES"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:TodoMVP.xcodeproj",
+      "identifier" : "BD60CBBC2ABD44CF002FEE46",
+      "name" : "TodoMVP"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TodoMVP.xcodeproj",
+        "identifier" : "BD60CBD22ABD44D1002FEE46",
+        "name" : "TodoMVPTests"
+      }
+    }
+  ],
+  "version" : 1
+}

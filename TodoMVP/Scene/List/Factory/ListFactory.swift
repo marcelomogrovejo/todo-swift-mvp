@@ -8,9 +8,11 @@
 import UIKit
 import TodoRepositoryPackage
 
-class ListFactory {
+protocol ListFactoryProtocol {
+    func createScene() -> UIViewController
+}
 
-    public init() { }
+class ListFactory: ListFactoryProtocol {
 
     public func createScene() -> UIViewController {
         let view = ListViewController()
