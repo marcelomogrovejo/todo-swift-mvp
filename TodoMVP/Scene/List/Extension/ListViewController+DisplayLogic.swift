@@ -16,7 +16,8 @@ extension ListViewController: ListViewProtocol {
     }
 
     func displayListItems(viewModel: List.Tasks.ViewModel) {
-        tasks = viewModel.tasks
+        guard let dataSource = dataSource else { return }
+        dataSource.tasks = viewModel.tasks
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

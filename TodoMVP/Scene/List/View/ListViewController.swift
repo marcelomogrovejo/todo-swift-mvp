@@ -14,20 +14,15 @@ class ListViewController: UIViewController {
     private struct Constants {
         static let defaultNavBarHeight: CGFloat = 48.0
     }
-    struct TableViewConstants {
-        static let numberOfSections: Int = 1
-        static let cellId: String = "ItemCellId"
-    }
     var presenter: ListPresenterProtocol?
     var router: ListRouterProtocol?
-
-    var tasks: [Task] = []
+    var dataSource: ListDataSource?
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: TableViewConstants.cellId)
+        tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: ListDataSource.Constants.cellId)
         tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = dataSource
         tableView.separatorStyle = .singleLine
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView

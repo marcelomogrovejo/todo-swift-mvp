@@ -19,9 +19,11 @@ class ListFactory: ListFactoryProtocol {
         let presenter: ListPresenterProtocol? = ListPresenter()
         let router: ListRouterProtocol? = ListRouter()
         let apiService: ApiServiceProtocol = ApiService()
+        let dataSource: ListDataSource = ListDataSource()
 
         view.presenter = presenter
         view.router = router
+        view.dataSource = dataSource
 
         presenter?.view = view
         presenter?.apiService = apiService
