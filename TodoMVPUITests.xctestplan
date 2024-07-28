@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "83BC7306-C805-4894-BF6E-4CC8358210B2",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TodoMVP.xcodeproj",
+        "identifier" : "BD60CBDC2ABD44D1002FEE46",
+        "name" : "TodoMVPUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
