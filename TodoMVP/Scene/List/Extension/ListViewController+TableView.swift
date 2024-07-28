@@ -27,13 +27,13 @@ extension ListViewController: UITableViewDelegate {
         deleteAction.backgroundColor = .red
 
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion) in
-            
+
             print("Editing task...")
             completion(true)
         }
 //        editAction.image = UIImage(named: "icn-edit-task.png")
 //        editAction.backgroundColor = .blue
-        
+
         return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
 }
