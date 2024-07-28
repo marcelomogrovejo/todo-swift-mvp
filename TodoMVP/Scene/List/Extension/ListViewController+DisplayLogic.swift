@@ -42,7 +42,6 @@ extension ListViewController: ListViewProtocol {
                 break
             }
         }
-
     }
 
     func displayTaskRemovalCancellation() {

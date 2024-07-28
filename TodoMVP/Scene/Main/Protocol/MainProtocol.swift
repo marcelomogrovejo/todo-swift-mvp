@@ -8,14 +8,12 @@
 import UIKit
 
 protocol MainViewProtocol: AnyObject {
-    func displayWelcomeMessage(viewModel: Main.Welcome.ViewModel)
     func displayButtonTitle(viewModel: Main.List.ViewModel)
 }
 
 protocol MainPresenterProtocol: AnyObject {
     var view: MainViewProtocol? { get set }
 
-    func getWelcomeMessage()
     func getListTitleButton()
 }
 

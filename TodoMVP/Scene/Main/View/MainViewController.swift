@@ -83,9 +83,6 @@ class MainViewController: UIViewController {
     }
 
     private func setupWelcome() {
-//        presenter?.getWelcomeMessage()
-
-//        welcomeLabel.textColor = .Text.defaultColor
         view.addSubview(welcomeView)
         let welcomeViewConstants = [
             welcomeView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

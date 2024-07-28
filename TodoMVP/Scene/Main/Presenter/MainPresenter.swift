@@ -15,15 +15,8 @@ class MainPresenter: MainPresenterProtocol {
 
     // MARK: - Business logic
 
-    func getWelcomeMessage() {
-        let viewModel = Main.Welcome.ViewModel(message: "Hello World !!")
-        
-        view?.displayWelcomeMessage(viewModel: viewModel)
-    }
-
     func getListTitleButton() {
         let viewModel = Main.List.ViewModel(title: "Todo List")
-
         view?.displayButtonTitle(viewModel: viewModel)
     }
 
