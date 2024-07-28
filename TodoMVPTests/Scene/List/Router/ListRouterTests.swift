@@ -18,12 +18,12 @@ final class ListRouterTests: XCTestCase {
 
     }
 
-    func testListRouter_NavigateToTask_Successfully() {
+    func test_listRouter_navigateToTask_shouldSuccess() {
         
     }
 
-    func testListRouter_DismissSelf_Successfully() {
+    func test_listRouter_dismissSelf_shouldSuccess() {
         let sut = ListRouter()
-        sut.dismissSelf(listViewController: <#T##UIViewController#>)
+//        sut.dismissSelf(listViewController: <#T##UIViewController#>)
     }
 }

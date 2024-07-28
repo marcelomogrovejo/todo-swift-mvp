@@ -23,7 +23,7 @@ class MainViewControllerTests: XCTestCase {
         sut = nil
     }
 
-    func testMainViewController_InitializationState_Successfully() {
+    func test_mainView_initializationState_shouldSuccess() {
         // Arrange
         let mockPresenter = MockMainPresenter()
         sut.presenter = mockPresenter

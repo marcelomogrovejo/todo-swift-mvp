@@ -24,6 +24,7 @@
 		BD1663C82B1C9EC20090BCC6 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1663C72B1C9EC20090BCC6 /* TaskTableViewCell.swift */; };
 		BD1BC08D2B1B917A004BD34A /* TodoRepositoryPackage in Frameworks */ = {isa = PBXBuildFile; productRef = BD1BC08C2B1B917A004BD34A /* TodoRepositoryPackage */; };
 		BD2F3FD62C55507200938EF7 /* ListRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F3FD52C55507200938EF7 /* ListRouterTests.swift */; };
+		BD2F3FD82C55F5AE00938EF7 /* MockTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F3FD72C55F5AE00938EF7 /* MockTableView.swift */; };
 		BD42B2C82B1A2E6800961734 /* ItemCheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42B2C72B1A2E6800961734 /* ItemCheckButton.swift */; };
 		BD42B2E32B1B83B100961734 /* UITableView+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42B2E22B1B83B100961734 /* UITableView+Empty.swift */; };
 		BD60CBC12ABD44CF002FEE46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBC02ABD44CF002FEE46 /* AppDelegate.swift */; };
@@ -107,6 +108,7 @@
 		BD1663C32B1C9B050090BCC6 /* TaskViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskViewController+TableView.swift"; sourceTree = "<group>"; };
 		BD1663C72B1C9EC20090BCC6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		BD2F3FD52C55507200938EF7 /* ListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouterTests.swift; sourceTree = "<group>"; };
+		BD2F3FD72C55F5AE00938EF7 /* MockTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTableView.swift; sourceTree = "<group>"; };
 		BD42B2C72B1A2E6800961734 /* ItemCheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCheckButton.swift; sourceTree = "<group>"; };
 		BD42B2E22B1B83B100961734 /* UITableView+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Empty.swift"; sourceTree = "<group>"; };
 		BD42B2E52B1B8F9500961734 /* TodoRepositoryPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TodoRepositoryPackage; path = ../TodoRepositoryPackage; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 			children = (
 				BD73F7842C4F9D9C002B1DAB /* MockListPresenter.swift */,
 				BD73F7F82C551973002B1DAB /* MockListRouter.swift */,
+				BD2F3FD72C55F5AE00938EF7 /* MockTableView.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				BD73F7FF2C5521E7002B1DAB /* MockListView.swift in Sources */,
 				BDE488282ABD53E400DB9265 /* MainPresenterTests.swift in Sources */,
 				BD2F3FD62C55507200938EF7 /* ListRouterTests.swift in Sources */,
+				BD2F3FD82C55F5AE00938EF7 /* MockTableView.swift in Sources */,
 				BD73F7FC2C552166002B1DAB /* ListPresenterTests.swift in Sources */,
 				BD73F77E2C4F6D52002B1DAB /* MockListFactory.swift in Sources */,
 				BD73F7F92C551973002B1DAB /* MockListRouter.swift in Sources */,

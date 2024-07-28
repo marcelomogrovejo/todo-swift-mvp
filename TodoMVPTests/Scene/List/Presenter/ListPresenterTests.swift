@@ -23,7 +23,7 @@ final class ListPresenterTests: XCTestCase {
         mockListView = nil
     }
 
-    func testListPresenter_GetTitle_Successfully() {
+    func test_listPresenter_getTitle_shouldSuccess() {
         // Arrange
         sut.view = mockListView
 
@@ -35,7 +35,7 @@ final class ListPresenterTests: XCTestCase {
         XCTAssertEqual(mockListView.numberOfTimesIsCalledDisplayTitle, 1, "displayTitle() should be called once")
     }
 
-    func testListPresenter_FetchTaskList_Successfully() {
+    func test_listPresenter_fetchTaskList_shouldSuccess() {
         // Arrange
         sut.view = mockListView
         let expectation = expectation(description: "fetching tasks expectation on success")
@@ -52,7 +52,7 @@ final class ListPresenterTests: XCTestCase {
         XCTAssertEqual(mockListView.numberOfTimesIsCalledDisplayListItems, 1)
     }
 
-    func testListPresenter_FetchTaskList_Failure() {
+    func test_listPresenter_fetchTaskList_shouldFail() {
         // Arrange
         sut.view = mockListView
         let expectation = expectation(description: "fetching tasks expectation on failure")
@@ -69,7 +69,7 @@ final class ListPresenterTests: XCTestCase {
 //        XCTAssertEqual(mockListView.numberOfTimesIsCalledDisplayListItems, 1)
     }
 
-    func testListPresenter_NewTask_Successfully() {
+    func test_listPresenter_newTask_shouldSuccess() {
         // Arrange
         let mockTask = Task(id: UUID().uuidString,
                         avatar: "",
@@ -88,7 +88,7 @@ final class ListPresenterTests: XCTestCase {
 //        XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, <#T##expression2: Equatable##Equatable#>)
     }
 
-    func testListPresenter_UpdateTask_Successfully() {
+    func test_listPresenter_updateTask_shouldSuccess() {
         // Arrange
         let mockTask = Task(id: UUID().uuidString,
                         avatar: "",
@@ -106,7 +106,7 @@ final class ListPresenterTests: XCTestCase {
 //        XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, <#T##expression2: Equatable##Equatable#>)
     }
 
-    func testListPresenter_GetRemoveConfirmation_Successfully() {
+    func test_listPresenter_getRemoveConfirmation_shouldSuccess() {
         // Arrange
         sut.view = mockListView
         let mockTask = Task(id: UUID().uuidString,
@@ -126,7 +126,7 @@ final class ListPresenterTests: XCTestCase {
         XCTAssertEqual(mockListView.numberOfTimesIsCalledDisplayDeletionConfirmed, 1, "displayDeletionConfirmed() should be called once")
     }
 
-    func testListPresenter_CancelTaskRemoval_Successfully() {
+    func test_listPresenter_cancelTaskRemoval_shouldSuccess() {
         // Arrange
         sut.view = mockListView
 
@@ -138,7 +138,7 @@ final class ListPresenterTests: XCTestCase {
         XCTAssertEqual(mockListView.numberOfTimesIsCalledDisplayTaskRemovalCancellation, 1, "displayTaskRemovalCancellation() should be called once")
     }
 
-    func testListPresenter_RemoveTask_Successfully() {
+    func test_listPresenter_removeTask_shouldSuccess() {
         // Arrange
         sut.view = mockListView
         let expectation = expectation(description: "Removing task expectation on success")
@@ -163,7 +163,7 @@ final class ListPresenterTests: XCTestCase {
         XCTAssertEqual(mockListView.numberOfTimesIsCalledDisplayTaskRemoved, 1, "displayTaskRemoved() should be called once")
     }
 
-    func testListPresenter_RemoveTask_Failure() {
+    func test_listPresenter_removeTask_shouldFail() {
         // Arrange
         sut.view = mockListView
         let expectation = expectation(description: "Removing task expectation on failure")

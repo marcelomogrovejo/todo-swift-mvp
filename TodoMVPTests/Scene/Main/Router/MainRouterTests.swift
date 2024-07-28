@@ -20,7 +20,7 @@ final class MainRouterTests: XCTestCase {
         sut = nil
     }
 
-    func testMainRouter_NavigateToTodoList_Successfully() {
+    func test_mainRouter_navigateToTodoList_shouldSuccess() {
         // Arrange
         let mockDestinationFactory = MockListFactory()
         let mockDestinationVC = mockDestinationFactory.createScene()

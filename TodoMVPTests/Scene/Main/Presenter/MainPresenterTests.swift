@@ -22,7 +22,7 @@ final class MainPresenterTests: XCTestCase {
         sut = nil
     }
 
-    func testMainPresenter_GetListTitleButton_Successfully() {
+    func test_mainPresenter_getListTitleButton_shouldSuccess() {
         // Arrange
         let mockMainView = MockMainView()
         sut.view = mockMainView
