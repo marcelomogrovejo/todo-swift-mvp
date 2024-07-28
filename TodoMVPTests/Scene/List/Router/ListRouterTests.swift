@@ -10,12 +10,14 @@ import XCTest
 
 final class ListRouterTests: XCTestCase {
 
-    override func setUpWithError() throws {
+    var sut: ListRouter!
 
+    override func setUpWithError() throws {
+        sut = ListRouter()
     }
 
     override func tearDownWithError() throws {
-
+        sut = nil
     }
 
     func test_listRouter_navigateToTask_shouldSuccess() {
@@ -23,7 +25,15 @@ final class ListRouterTests: XCTestCase {
     }
 
     func test_listRouter_dismissSelf_shouldSuccess() {
-        let sut = ListRouter()
-//        sut.dismissSelf(listViewController: <#T##UIViewController#>)
+        // Arrange
+        let mockListView = MockListViewController()
+
+        // Act
+        sut.dismissSelf(listViewController: mockListView)
+
+        // Assert
+        XCTAssertTrue(mockListView.isDismissCalled)
+        XCTAssertEqual(mockListView.numberOfTimesIsCalledDismiss, 1)
+
     }
 }
