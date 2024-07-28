@@ -25,6 +25,8 @@
 		BD1BC08D2B1B917A004BD34A /* TodoRepositoryPackage in Frameworks */ = {isa = PBXBuildFile; productRef = BD1BC08C2B1B917A004BD34A /* TodoRepositoryPackage */; };
 		BD2F3FD62C55507200938EF7 /* ListRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F3FD52C55507200938EF7 /* ListRouterTests.swift */; };
 		BD2F3FD82C55F5AE00938EF7 /* MockTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F3FD72C55F5AE00938EF7 /* MockTableView.swift */; };
+		BD2F3FDA2C5608D400938EF7 /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F3FD92C5608D400938EF7 /* ListDataSource.swift */; };
+		BD4154592C560EE5007C105B /* ListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4154582C560EE5007C105B /* ListDataSourceTests.swift */; };
 		BD42B2C82B1A2E6800961734 /* ItemCheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42B2C72B1A2E6800961734 /* ItemCheckButton.swift */; };
 		BD42B2E32B1B83B100961734 /* UITableView+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42B2E22B1B83B100961734 /* UITableView+Empty.swift */; };
 		BD60CBC12ABD44CF002FEE46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60CBC02ABD44CF002FEE46 /* AppDelegate.swift */; };
@@ -109,6 +111,8 @@
 		BD1663C72B1C9EC20090BCC6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		BD2F3FD52C55507200938EF7 /* ListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouterTests.swift; sourceTree = "<group>"; };
 		BD2F3FD72C55F5AE00938EF7 /* MockTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTableView.swift; sourceTree = "<group>"; };
+		BD2F3FD92C5608D400938EF7 /* ListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSource.swift; sourceTree = "<group>"; };
+		BD4154582C560EE5007C105B /* ListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSourceTests.swift; sourceTree = "<group>"; };
 		BD42B2C72B1A2E6800961734 /* ItemCheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCheckButton.swift; sourceTree = "<group>"; };
 		BD42B2E22B1B83B100961734 /* UITableView+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Empty.swift"; sourceTree = "<group>"; };
 		BD42B2E52B1B8F9500961734 /* TodoRepositoryPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TodoRepositoryPackage; path = ../TodoRepositoryPackage; sourceTree = "<group>"; };
@@ -338,6 +342,22 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		BD2F3FDB2C560B6200938EF7 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				BD2F3FD92C5608D400938EF7 /* ListDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		BD4154572C560ED2007C105B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				BD4154582C560EE5007C105B /* ListDataSourceTests.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		BD42B2E42B1B8F9500961734 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +445,7 @@
 		BD73F77F2C4F9C26002B1DAB /* List */ = {
 			isa = PBXGroup;
 			children = (
+				BD4154572C560ED2007C105B /* DataSource */,
 				BD2F3FD42C55505A00938EF7 /* Router */,
 				BD73F7FA2C552142002B1DAB /* Presenter */,
 				BD73F7802C4F9C30002B1DAB /* View */,
@@ -614,6 +635,7 @@
 		BDE488312ABE9B3D00DB9265 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				BD2F3FDB2C560B6200938EF7 /* DataSource */,
 				BDF3CE4E2B136A3C00F02819 /* Router */,
 				BDE488462ABE9E5800DB9265 /* Extension */,
 				BDE488422ABE9E1100DB9265 /* Cell */,
@@ -910,6 +932,7 @@
 				BDE4884C2ABE9F9E00DB9265 /* ListFactory.swift in Sources */,
 				BDE4881E2ABD4DD100DB9265 /* MainPresenter.swift in Sources */,
 				BDF3CE532B137A5E00F02819 /* UIImge+Assets.swift in Sources */,
+				BD2F3FDA2C5608D400938EF7 /* ListDataSource.swift in Sources */,
 				BD1663B42B1C88050090BCC6 /* Task.swift in Sources */,
 				BDA93D5A2B240A64002DE3DC /* DatePickerType.swift in Sources */,
 				BDE488452ABE9E2C00DB9265 /* ItemTableViewCell.swift in Sources */,
@@ -930,6 +953,7 @@
 			files = (
 				BD73F8012C55281E002B1DAB /* MockApiService.swift in Sources */,
 				BD73F7852C4F9D9C002B1DAB /* MockListPresenter.swift in Sources */,
+				BD4154592C560EE5007C105B /* ListDataSourceTests.swift in Sources */,
 				BDE4882F2ABD5A6000DB9265 /* MockMainPresenter.swift in Sources */,
 				BD73F7822C4F9C5C002B1DAB /* ListViewTests.swift in Sources */,
 				BDE4882C2ABD586B00DB9265 /* MainViewTests.swift in Sources */,
