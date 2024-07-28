@@ -16,26 +16,25 @@ class TaskViewController: UIViewController {
     // MARK: - Properties
 
     struct TableViewConstants {
-        static let numberOfSections: Int = 1
-        static let tableCellId: String = "TableCellId"
-
         static let headerCellHeight: CGFloat = 20.0
+        static let footerCellHeight: CGFloat = .leastNormalMagnitude
         static let cellHeight: CGFloat = 50.0
     }
     var presenter: TaskPresenterProtocol?
     var router: TaskRouterProtocol?
+    
+    // TODO: move to factory
+    var dataSource: TaskDataSource = TaskDataSource()
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TableViewConstants.tableCellId)
+        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TaskDataSource.Constants.tableCellId)
         tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = dataSource
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-
-    var dataSource: [String] = []
 
     // MARK: - Delegate
 
@@ -91,13 +90,13 @@ class TaskViewController: UIViewController {
     // MARK: - Target
 
     @objc
-    private func cancel() {
+    func cancel() {
         router?.dismissSelf(taskViewController: self)
     }
 
     @objc
-    private func addTask() {
-        let request = TaskItem.Save.Request(dataSource: dataSource)
+    func addTask() {
+        let request = TaskItem.Save.Request(dataSource: dataSource.data)
         presenter?.addTask(request: request)
     }
 

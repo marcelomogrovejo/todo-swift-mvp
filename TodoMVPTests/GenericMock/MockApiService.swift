@@ -16,6 +16,8 @@ class MockApiService: ApiServiceProtocol {
     private(set) var numberOfTimesIsCalledGetAll = 0
     private(set) var isDeleteCalled = false
     private(set) var numberOfTimesIsCalledDelete = 0
+    private(set) var isNewCalled = false
+    private(set) var numberOfTimesIsCalledNew = 0
 
     private var success: Bool? = false
     private var expectation: XCTestExpectation?
@@ -60,8 +62,21 @@ class MockApiService: ApiServiceProtocol {
         [DomainTodoTask(id: "", avatar: "", username: "", title: "", date: .now, description: "")]
     }
     
-    func new(_ item: TodoRepositoryPackage.DomainTodoTask, completion: @escaping (Result<TodoRepositoryPackage.DomainTodoTask, TodoRepositoryPackage.RepositoryError>) -> Void) {
-        // TODO: implement
+    func new(_ item: DomainTodoTask, completion: @escaping (Result<DomainTodoTask, RepositoryError>) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.isNewCalled = true
+            self.numberOfTimesIsCalledNew += 1
+
+            if let success = self.success, success {
+                completion(.success(self.getMockedTasks(cant: 1)[0]))
+            } else {
+                completion(.failure(self.error ?? .notFound))
+            }
+            self.expectation?.fulfill()
+        }
     }
     
     func newAsync(_ item: DomainTodoTask) async throws -> DomainTodoTask {

@@ -47,7 +47,6 @@ class TaskPresenter: TaskPresenterProtocol {
                 print("Adding Error: \(error.localizedDescription)")
             }
         }
-         
     }
 
 }

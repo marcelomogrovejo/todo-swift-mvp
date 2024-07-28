@@ -22,7 +22,7 @@ final class TaskRouterTests: XCTestCase {
 
     func test_taskRouter_dismissSelf_should() {
         // Arrange
-        let mockTaskView = MockTaskView()
+        let mockTaskView = MockRouterTaskView()
 
         // Act
         sut.dismissSelf(taskViewController: mockTaskView)

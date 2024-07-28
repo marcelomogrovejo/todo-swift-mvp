@@ -1,5 +1,5 @@
 //
-//  MockTaskView.swift
+//  MockRouterTaskView.swift
 //  TodoMVPTests
 //
 //  Created by Marcelo Mogrovejo on 28/07/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MockTaskView: UIViewController {
+class MockRouterTaskView: UIViewController {
 
     private(set) var isDismissCalled = false
     private(set) var numberOfTimesIsCalledDismiss = 0

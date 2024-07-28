@@ -5,7 +5,6 @@
 //  Created by Marcelo Mogrovejo on 27/07/2024.
 //
 
-import Foundation
 import UIKit
 @testable import TodoMVP
 
