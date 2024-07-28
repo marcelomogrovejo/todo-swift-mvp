@@ -5,7 +5,6 @@
 //  Created by Marcelo Mogrovejo on 28/07/2024.
 //
 
-import Foundation
 import UIKit
 
 class MockTableView: UITableView {

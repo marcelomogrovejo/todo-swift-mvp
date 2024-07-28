@@ -7,37 +7,10 @@
 
 import UIKit
 
-extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
+extension TaskViewController: UITableViewDelegate {
 
-    // MARK: - TableView delegate & datasource
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        TaskCellType.allCases.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-        //        TaskSectionType.allCases.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.tableCellId, for: indexPath) as! TaskTableViewCell
-        guard let section = TaskCellType(rawValue: indexPath.section) else { return UITableViewCell() }
-        switch section {
-        case .date:
-            cell.pickerType = .date
-        case .time:
-            cell.pickerType = .time
-        default:
-            break
-        }
-        cell.placeholder = section.description
-        cell.callback = { string in
-            self.dataSource[indexPath.section] = string
-        }
-        return cell
-    }
-    
+    // MARK: - TableView delegate
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         TableViewConstants.cellHeight
     }
@@ -47,7 +20,7 @@ extension TaskViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        .leastNormalMagnitude
+        TableViewConstants.footerCellHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

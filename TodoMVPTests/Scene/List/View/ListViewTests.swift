@@ -92,7 +92,7 @@ final class ListViewTests: XCTestCase {
     
     func test_listView_displayTitle_shouldSuccess() {
         // Arrange
-        let mockTitle = "Test Title"
+        let mockTitle = "Test List Title"
         let mockViewModel = List.Title.ViewModel(title: mockTitle)
         
         // Act
@@ -116,7 +116,7 @@ final class ListViewTests: XCTestCase {
         sut.displayDeletionConfirmed(viewModel: mockViewModel)
         
         // Assert
-        //        XCTAssertTrue(mockPresenter.isRemoveTaskCalled)
+        // XCTAssertTrue(mockPresenter.isRemoveTaskCalled)
     }
     
     func test_listView_displayTaskRemovalCancellation_shouldSuccess() {
@@ -151,9 +151,9 @@ final class ListViewTests: XCTestCase {
     func test_listView_hideLoadingIndicator_shouldSuccess() {
         // TODO: implement the source code first
     }
-    
+
     // MARK: - TableView delegate
-    
+
     func test_listView_trailingSwipeActionsConfigurationForRowAt_shouldBeDelete() {
         // Arrange
         let mockAction = "Delete"
@@ -178,5 +178,4 @@ final class ListViewTests: XCTestCase {
         XCTAssertEqual(mockSwipeActionConfig.actions[1].title, mockAction, "")
     }
 
-    
 }
