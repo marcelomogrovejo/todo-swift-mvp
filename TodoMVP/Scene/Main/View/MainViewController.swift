@@ -73,6 +73,7 @@ class MainViewController: UIViewController {
         let navItem = UINavigationItem(title: "Some Generic Title Here")
         navBar.setItems([navItem], animated: true)
         navBar.delegate = self
+        navBar.accessibilityIdentifier = "com.mogro.todomvp.mainScreen.navigationBar"
         view.addSubview(navBar)
         let navBarConstraints = [
             navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -98,6 +99,7 @@ class MainViewController: UIViewController {
     private func setupAnimation() {
         splashView.animationName = animationName
         splashView.loopMode = .playOnce
+        splashView.accessibilityIdentifier = "com.mogro.todomvp.mainScreen.mainAnimation"
         welcomeView.addSubview(splashView)
         
         /// SplashView constraints
@@ -120,6 +122,7 @@ class MainViewController: UIViewController {
         listButton.backgroundColor = .Button.backgroundColor
         listButton.setTitleColor(.Button.foregroundColor, for: .normal)
         listButton.addTarget(self, action: #selector(MainViewController.showTodoList), for: .touchUpInside)
+        listButton.accessibilityIdentifier = "com.mogro.todomvp.mainScreen.mainButton"
 
         view.addSubview(listButton)
         let listButtonConstraints = [

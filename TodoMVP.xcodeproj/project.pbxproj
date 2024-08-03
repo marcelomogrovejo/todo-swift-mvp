@@ -56,6 +56,7 @@
 		BD80857D2C566BE900FE5966 /* TaskViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD80857C2C566BE900FE5966 /* TaskViewTests.swift */; };
 		BD8085802C566D2900FE5966 /* MockTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD80857F2C566D2900FE5966 /* MockTaskPresenter.swift */; };
 		BD8085822C56708000FE5966 /* MockTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8085812C56708000FE5966 /* MockTaskRouter.swift */; };
+		BD8F863F2C5685BE00833581 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F863E2C5685BE00833581 /* MainViewUITests.swift */; };
 		BDA93D582B240A19002DE3DC /* TaskCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA93D572B240A19002DE3DC /* TaskCellType.swift */; };
 		BDA93D5A2B240A64002DE3DC /* DatePickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA93D592B240A64002DE3DC /* DatePickerType.swift */; };
 		BDA93D5C2B240B9E002DE3DC /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA93D5B2B240B9E002DE3DC /* Form.swift */; };
@@ -159,6 +160,8 @@
 		BD80857C2C566BE900FE5966 /* TaskViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewTests.swift; sourceTree = "<group>"; };
 		BD80857F2C566D2900FE5966 /* MockTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskPresenter.swift; sourceTree = "<group>"; };
 		BD8085812C56708000FE5966 /* MockTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskRouter.swift; sourceTree = "<group>"; };
+		BD8F863E2C5685BE00833581 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
+		BD8F86402C568D6600833581 /* TodoMVPUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TodoMVPUITests.xctestplan; sourceTree = "<group>"; };
 		BDA93D572B240A19002DE3DC /* TaskCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellType.swift; sourceTree = "<group>"; };
 		BDA93D592B240A64002DE3DC /* DatePickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerType.swift; sourceTree = "<group>"; };
 		BDA93D5B2B240B9E002DE3DC /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
@@ -438,6 +441,7 @@
 		BD60CBB42ABD44CF002FEE46 = {
 			isa = PBXGroup;
 			children = (
+				BD8F86402C568D6600833581 /* TodoMVPUITests.xctestplan */,
 				BD73F8022C55426A002B1DAB /* TodoMVPTests.xctestplan */,
 				BD73F7752C4F5535002B1DAB /* README.md */,
 				BD42B2E42B1B8F9500961734 /* Packages */,
@@ -489,6 +493,7 @@
 		BD60CBE02ABD44D1002FEE46 /* TodoMVPUITests */ = {
 			isa = PBXGroup;
 			children = (
+				BD8F863B2C56859700833581 /* Scene */,
 				BD60CBE12ABD44D1002FEE46 /* TodoMVPUITests.swift */,
 				BD60CBE32ABD44D1002FEE46 /* TodoMVPUITestsLaunchTests.swift */,
 			);
@@ -616,6 +621,30 @@
 				BD8085812C56708000FE5966 /* MockTaskRouter.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		BD8F863B2C56859700833581 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				BD8F863C2C56859E00833581 /* Main */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		BD8F863C2C56859E00833581 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BD8F863D2C5685A600833581 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BD8F863D2C5685A600833581 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD8F863E2C5685BE00833581 /* MainViewUITests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BDA93D562B2409E9002DE3DC /* Enums */ = {
@@ -1114,6 +1143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD60CBE42ABD44D1002FEE46 /* TodoMVPUITestsLaunchTests.swift in Sources */,
+				BD8F863F2C5685BE00833581 /* MainViewUITests.swift in Sources */,
 				BD60CBE22ABD44D1002FEE46 /* TodoMVPUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

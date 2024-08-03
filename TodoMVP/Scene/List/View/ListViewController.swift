@@ -56,6 +56,8 @@ class ListViewController: UIViewController {
                                           target: self,
                                           action: #selector(ListViewController.close))
         closeButton.tintColor = .Button.foregroundColor
+        closeButton.accessibilityIdentifier = "com.mogro.todomvp.listScreen.close"
+        closeButton.accessibilityHint = "Close task list screen"
         navigationItem.leftBarButtonItem = closeButton
     }
 

@@ -7,6 +7,7 @@
 
 import XCTest
 
+/*
 final class TodoMVPUITests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -39,3 +40,4 @@ final class TodoMVPUITests: XCTestCase {
         }
     }
 }
+*/
