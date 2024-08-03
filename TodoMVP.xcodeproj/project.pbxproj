@@ -154,6 +154,7 @@
 		BD73F7FE2C5521E7002B1DAB /* MockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListView.swift; sourceTree = "<group>"; };
 		BD73F8002C55281E002B1DAB /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		BD73F8022C55426A002B1DAB /* TodoMVPTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TodoMVPTests.xctestplan; sourceTree = "<group>"; };
+		BD7E67122C5E979C0010CB68 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		BD80856D2C56281900FE5966 /* TaskPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPresenterTests.swift; sourceTree = "<group>"; };
 		BD8085702C5629FD00FE5966 /* MockPresenterTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterTaskView.swift; sourceTree = "<group>"; };
 		BD8085762C565FA400FE5966 /* TaskDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataSource.swift; sourceTree = "<group>"; };
@@ -443,6 +444,7 @@
 		BD60CBB42ABD44CF002FEE46 = {
 			isa = PBXGroup;
 			children = (
+				BD7E67122C5E979C0010CB68 /* LICENSE.md */,
 				BDC9A0D52C5DF96A00143034 /* logo-to-do-list.png */,
 				BD8F86402C568D6600833581 /* TodoMVPUITests.xctestplan */,
 				BD73F8022C55426A002B1DAB /* TodoMVPTests.xctestplan */,
