@@ -10,7 +10,16 @@
 9. [Workflow](#workflow)
 
 # ToDoMVP Demo App
-A simple project that handle user tasks
+
+<br />
+<p align="center">
+  <a href="https://github.com/marcelomogrovejo/todo-swift-mvp">
+    <img src="logo-to-do-list.png" alt="Logo" width="80" height="80">
+  </a>
+  <p align="center">
+    A simple project that handle user tasks
+  </p>
+</p>
 
 # Description
 <p>ToDoMVP project is a very simple app which is developed to learn and compare Swift and SwiftUI capabilities.<br>
