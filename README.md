@@ -12,6 +12,8 @@
 7. [Deployment](#deployment)
 8. [Dependencies](#dependencies)
 9. [Workflow](#workflow)
+10. [Contribute](#Contribute)
+11. [Meta](#Meta)
 
 # ToDoMVP Demo App
 
