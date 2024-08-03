@@ -51,7 +51,7 @@ In order to delete a task you should swipe left the task item on the list and ta
 
 # Running the tests
 <p>The ToDoMVP project can be tested using the built-in framework XCTest.<br>
-To start testing the project, you will need to change to the tests target in your Xcode project, and then just run the project in test mode.</p>
+To start testing the project, you will need to change to the 'TodoMVPTests' target in your Xcode project, and then just run the tests project.</p>
 
 # Deployment
 Keep in mind that deploying an iOS app to the App Store requires having an Apple Developer account.
