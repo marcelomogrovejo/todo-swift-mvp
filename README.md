@@ -7,9 +7,7 @@
 6. [Running the tests](#running-the-tests)
 7. [Deployment](#deployment)
 8. [Dependencies](#dependencies)
-9. [Task board](#task-board)
-10. [Design](#design)
-11. [API](#api)
+9. [Workflow](#workflow)
 
 # ToDoMVP Demo App
 A simple project that handle user tasks
