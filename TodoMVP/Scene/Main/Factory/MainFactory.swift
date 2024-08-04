@@ -11,6 +11,12 @@ class MainFactory {
 
     public init() {}
 
+    /// Create a new scene.
+    ///
+    /// Setups all the components of the scene.
+    ///
+    /// - Returns: The main view of the scene.
+    ///
     public func createScene() -> UIViewController {
         let view = MainViewController()
         let presenter: MainPresenterProtocol? = MainPresenter()

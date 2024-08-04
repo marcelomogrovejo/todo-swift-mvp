@@ -8,6 +8,9 @@
 import UIKit
 
 protocol TaskViewDismissable: AnyObject {
+
+    /// Refresh the current view.
+    ///
     func updateView()
 }
 

@@ -10,6 +10,12 @@ import TodoRepositoryPackage
 
 class TaskFactory {
 
+    /// Create a new scene.
+    ///
+    /// Setups all the components of the scene.
+    /// 
+    /// - Returns: The main view of the scene.
+    /// 
     func createScene() -> UIViewController {
         let view = TaskViewController()
         let presenter: TaskPresenterProtocol? = TaskPresenter()

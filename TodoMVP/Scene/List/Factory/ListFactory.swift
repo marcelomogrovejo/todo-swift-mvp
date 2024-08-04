@@ -9,6 +9,13 @@ import UIKit
 import TodoRepositoryPackage
 
 protocol ListFactoryProtocol {
+
+    /// Create a new scene.
+    ///
+    /// Setups all the components of the scene.
+    /// 
+    /// - Returns: The main view of the scene.
+    ///
     func createScene() -> UIViewController
 }
 
